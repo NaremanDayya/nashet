@@ -10,6 +10,23 @@
         <p class="text-gray-600 mt-1">يمكنك تعديل جميع الأرقام والنصوص المعروضة في الموقع من هنا</p>
     </div>
 
+    @php
+        $keyLabels = [
+            'company_name_ar'           => 'اسم الشركة (عربي)',
+            'company_name_en'           => 'اسم الشركة (إنجليزي)',
+            'company_tagline_ar'        => 'الشعار الرئيسي (عربي)',
+            'company_tagline_en'        => 'الشعار الرئيسي (إنجليزي)',
+            'company_description_ar'    => 'وصف الشركة (عربي)',
+            'company_founded_year'      => 'سنة التأسيس',
+            'company_phone'             => 'رقم الهاتف',
+            'hero_title_ar'             => 'عنوان القسم الرئيسي (عربي)',
+            'hero_subtitle_ar'          => 'العنوان الفرعي للقسم الرئيسي (عربي)',
+            'why_choose_title_ar'       => 'عنوان قسم "لماذا نحن" (عربي)',
+            'why_choose_subtitle_ar'    => 'العنوان الفرعي لقسم "لماذا نحن" (عربي)',
+            'why_choose_description_ar' => 'وصف قسم "لماذا نحن" (عربي)',
+        ];
+    @endphp
+
     <form method="POST" action="{{ route('admin.settings.update') }}" class="p-6">
         @csrf
         
@@ -29,7 +46,7 @@
                 @foreach($groupSettings as $setting)
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
-                        {{ str_replace('_', ' ', $setting->key) }}
+                        {{ $keyLabels[$setting->key] ?? str_replace('_', ' ', $setting->key) }}
                     </label>
                     
                     @if($setting->type === 'number')
