@@ -217,9 +217,7 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="#home" class="text-white-300 hover:text-red-500 transition font-medium">الرئيسية</a>
-                <a href="#section2" class="text-white-300 hover:text-red-500 transition font-medium">من نحن</a>
                 <a href="#section3" class="text-white-300 hover:text-red-500 transition font-medium">خدماتنا</a>
-                <a href="#section7" class="text-white-300 hover:text-red-500 transition font-medium">التدقيق الميداني</a>
                 <a href="#section11" class="text-white-300 hover:text-red-500 transition font-medium">لماذا نحن</a>
                 <a href="#contact" class="text-white-300 hover:text-red-500 transition font-medium">تواصل معنا</a>
             </div>
