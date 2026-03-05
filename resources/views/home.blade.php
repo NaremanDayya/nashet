@@ -314,27 +314,36 @@
                     <span class="text-xl text-white">ساعات عمل</span>
                 </div>
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <img src="{{ asset('assets/img/sec2.3-car-icon.png') }}" alt="Car" class="w-10 h-10">
                     <span class="text-xl text-white">مركبة نقل حديثة</span>
                 </div>
 
                 <!-- Row 2 -->
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <img src="{{ asset('assets/img/sec2.6-home-icon.png') }}" alt="Home" class="w-10 h-10">
                     <span class="text-xl text-white">سكن + طعام</span>
                 </div>
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <img src="{{ asset('assets/img/sec2.5-phone-icon.png') }}" alt="Phone" class="w-10 h-10">
                     <span class="text-xl text-white">هاتف ذكي</span>
                 </div>
 
                 <!-- Row 3 -->
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <img src="{{ asset('assets/img/sec2.4-certificate-icon.png') }}" alt="Certificate" class="w-10 h-10">
                     <span class="text-xl text-white">شهادة تدريب</span>
                 </div>
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+{{--                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>--}}
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="6" r="4" fill="#E11D48"/>
+                        <path d="M4.5 6L5.5 7L7.5 5" stroke="white" stroke-width="1" stroke-linecap="round"/>
+
+                        <path d="M12 18C12 14.6863 14.6863 12 18 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 22C12 18.6863 18.6863 12 22 12" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+                        <circle cx="18" cy="18" r="3" fill="#E11D48"/>
+                    </svg>
                     <span class="text-xl text-white">تغطية شاملة</span>
                 </div>
             </div>
@@ -394,27 +403,27 @@
 
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3 text-lg">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec3.3-accurate-icon.png') }}" alt="Accurate" class="w-8 h-8">
                             <span class="text-white-200">تحقيق توافر المنتجات</span>
                         </li>
                         <li class="flex items-start gap-3 text-lg">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec3.4-revision-sales.png') }}" alt="Revision" class="w-8 h-8">
                             <span class="text-white-200">مراجعة الأسعار والعروض الترويجية</span>
                         </li>
                         <li class="flex items-start gap-3 text-lg">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec3.5-analysis.png') }}" alt="Analysis" class="w-8 h-8">
                             <span class="text-white-200">تحليل حركة المنافسين</span>
                         </li>
                         <li class="flex items-start gap-3 text-lg">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec3.6-stores.png') }}" alt="Stores" class="w-8 h-8">
                             <span class="text-white-200">رصد حالة البضائع والمتاجر</span>
                         </li>
                         <li class="flex items-start gap-3 text-lg">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec3.8-muscales.png') }}" alt="New Stores" class="w-8 h-8">
                             <span class="text-white-200">المتاجر "الافتتاحية الجديدة"</span>
                         </li>
                         <li class="flex items-start gap-3 text-lg">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec3.7-reports.png') }}" alt="Reports" class="w-8 h-8">
                             <span class="text-white-200">تقديم تقارير تحليلية مصورة</span>
                         </li>
                     </ul>
@@ -492,27 +501,27 @@
                 <div>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec4.4-transports.png') }}" alt="Transport" class="w-8 h-8">
                             <span class="text-white-200">السيارات معتمدة</span>
                         </li>
                         <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec4.3-uniform.png') }}" alt="Uniform" class="w-8 h-8">
                             <span class="text-white-200">ملابس موحدة</span>
                         </li>
                         <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec4.8-health-certificate.png') }}" alt="Health Certificate" class="w-8 h-8">
                             <span class="text-white-200">شهادة صحية</span>
                         </li>
                         <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec4.8-health-certificate.png') }}" alt="Health Insurance" class="w-8 h-8">
                             <span class="text-white-200">تأمين طبي</span>
                         </li>
                         <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec4.5-phone.png') }}" alt="Phone" class="w-8 h-8">
                             <span class="text-white-200">هاتف فوري</span>
                         </li>
                         <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <img src="{{ asset('assets/img/sec4.6-coverage.png') }}" alt="Coverage" class="w-8 h-8">
                             <span class="text-white-200">تغطية شاملة</span>
                         </li>
                     </ul>
@@ -574,59 +583,56 @@
     <div class="section-content">
         <div class="max-w-5xl mx-auto" data-aos="fade-up">
             <!-- Header -->
-            <div class="mb-8">
-                <h2 class="text-6xl md:text-7xl font-black text-white leading-tight mb-2">المواد الإعلانية والدعائية</h2>
-                <p class="text-2xl text-red-600 font-bold">صناعة وتنفيذ جميع الطلبات</p>
+            <div class="mb-4">
+                <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-2">المواد الإعلانية والدعائية</h2>
+                <p class="text-xl text-red-600 font-bold">صناعة وتنفيذ جميع الطلبات</p>
             </div>
 
             <!-- Red accent line -->
-            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+            <div class="w-20 h-1 bg-red-600 mb-6"></div>
 
-            <!-- Brand Logo/Name -->
-            <div class="mb-8">
-                <span class="text-3xl md:text-4xl font-black text-white border-b-2 border-red-600 pb-2">Nashet</span>
-            </div>
-
-            <!-- Products Grid - Two columns as in screenshot -->
-            <div class="grid md:grid-cols-2 gap-6 max-w-3xl">
-                <!-- Column 1 -->
-                <div>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
-                            <span class="text-white-200">الزول - لاب</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
-                            <span class="text-white-200">المطبوعات</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
-                            <span class="text-white-200">الشاشة الرقمية</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
-                            <span class="text-white-200">طاولة العرض</span>
-                        </li>
-                    </ul>
+            <!-- Products Grid with Images - 3x3 layout as in design -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl">
+                <!-- الروان -اب -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec5.1-material1.png') }}" alt="الروان -اب" class="w-16 h-16 mx-auto mb-2">
+                    <span class="text-white font-bold text-sm">الأعلام التجارية</span>
                 </div>
 
-                <!-- Column 2 -->
-                <div>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
-                            <span class="text-white-200">اللابين الموصدة</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
-                            <span class="text-white-200">البستادات</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
-                            <span class="text-red-500 font-bold text-xl">•</span>
-                            <span class="text-white-200">اللافتات التجارية</span>
-                        </li>
-                    </ul>
+                <!-- المطبوعات -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec5.2-material2.png') }}" alt="المطبوعات" class="w-16 h-16 mx-auto mb-2">
+                    <span class="text-white font-bold text-sm">الستاندات</span>
+                </div>
+
+                <!-- الشاشة الرقمية -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec5.3-material3.png') }}" alt="الشاشة الرقمية" class="w-16 h-16 mx-auto mb-2">
+                    <span class="text-white font-bold text-sm">الملابس الموحدة</span>
+                </div>
+
+                <!-- طاولة العرض -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec5.4-material4.png') }}" alt="طاولة العرض" class="w-16 h-16 mx-auto mb-2">
+                    <span class="text-white font-bold text-sm">طاولة العرض</span>
+                </div>
+
+                <!-- المقاسين الموصدة -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec5.5-material5.png') }}" alt="المقاسين الموصدة" class="w-16 h-16 mx-auto mb-2">
+                    <span class="text-white font-bold text-sm">الشنطة الرقمية</span>
+                </div>
+
+                <!-- البنتانات -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec5.6-material6.png') }}" alt="البنتانات" class="w-16 h-16 mx-auto mb-2">
+                    <span class="text-white font-bold text-sm">المطبوعات</span>
+                </div>
+
+                <!-- الأعمال التجارية -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center md:col-start-2">
+                    <img src="{{ asset('assets/img/sec5.7-material7.png') }}" alt="الأعمال التجارية" class="w-16 h-16 mx-auto mb-2">
+                    <span class="text-white font-bold text-sm">الرول-اب</span>
                 </div>
             </div>
 
@@ -835,68 +841,68 @@
                             <div class="w-16 h-1 bg-red-600 mb-4"></div>
                         </div>
 
-                        <!-- Two Column Layout - positioned lower -->
-                        <div class="grid md:grid-cols-2 gap-12 mt-24 md:mt-32">
-                            <!-- Right Column - شامل -->
-                            <div class="text-center">
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">شامل</h3>
+            <!-- Two Column Layout - شامل and غير شامل -->
+            <div class="grid md:grid-cols-2 gap-12 mt-24 md:mt-32">
+                <!-- Right Column - شامل -->
+                <div class="flex flex-col items-center">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">شامل</h3>
 
-                                <!-- Icons with + -->
-                                <div class="flex items-center justify-center gap-2 mb-6">
-                                    <img src="{{ asset('assets/img/sec7.3-grey-home-icon.png') }}" alt="Home" class="w-7 h-7">
-                                    <span class="text-red-600 text-lg font-bold">+</span>
-                                    <img src="{{ asset('assets/img/sec7.4-grey-car-icon.png') }}" alt="Car" class="w-7 h-7">
-                                    <span class="text-red-600 text-lg font-bold">+</span>
-                                    <img src="{{ asset('assets/img/sec7.5-grey-food-icon.png') }}" alt="Food" class="w-7 h-7">
-                                </div>
+                    <!-- Icons with + -->
+                    <div class="flex items-center justify-center gap-2 mb-8">
+                        <img src="{{ asset('assets/img/sec7.3-grey-home-icon.png') }}" alt="Home" class="w-8 h-8">
+                        <span class="text-red-600 text-xl font-bold">+</span>
+                        <img src="{{ asset('assets/img/sec7.4-grey-car-icon.png') }}" alt="Car" class="w-8 h-8">
+                        <span class="text-red-600 text-xl font-bold">+</span>
+                        <img src="{{ asset('assets/img/sec7.5-grey-food-icon.png') }}" alt="Food" class="w-8 h-8">
+                    </div>
 
-                                <!-- Items List -->
-                                <ul class="space-y-2">
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
-                                        <span>١٠ ساعات عمل</span>
-                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔻</span>
-                                    </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
-                                        <span>نطاق معفي</span>
-                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔻</span>
-                                    </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
-                                        <span>تأمين طبي</span>
-                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔻</span>
-                                    </li>
-                                </ul>
-                            </div>
+                    <!-- Items List - شامل -->
+                    <ul class="space-y-3 flex flex-col items-end">
+                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                            <span>ساعات عمل</span>
+                            <span class="text-red-500 text-base w-6 text-center">🔻</span>
+                        </li>
+                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                            <span>نطاق معفي</span>
+                            <span class="text-red-500 text-base w-6 text-center">🔻</span>
+                        </li>
+                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                            <span>تأمين طبي</span>
+                            <span class="text-red-500 text-base w-6 text-center">🔻</span>
+                        </li>
+                    </ul>
+                </div>
 
-                            <!-- Left Column - غير شامل -->
-                            <div class="text-center">
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">غير شامل</h3>
+                <!-- Left Column - غير شامل -->
+                <div class="flex flex-col items-center">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">غير شامل</h3>
 
-                                <!-- Icons with + -->
-                                <div class="flex items-center justify-center gap-2 mb-6">
-                                    <img src="{{ asset('assets/img/sec7.6-white-home-icon.png') }}" alt="Home" class="w-7 h-7">
-                                    <span class="text-red-600 text-lg font-bold">+</span>
-                                    <img src="{{ asset('assets/img/sec7.7-white-car-icon.png') }}" alt="Car" class="w-7 h-7">
-                                    <span class="text-red-600 text-lg font-bold">+</span>
-                                    <img src="{{ asset('assets/img/sec7.8-white-food-icon.png') }}" alt="Food" class="w-7 h-7">
-                                </div>
+                    <!-- Icons with + -->
+                    <div class="flex items-center justify-center gap-2 mb-8">
+                        <img src="{{ asset('assets/img/sec7.6-white-home-icon.png') }}" alt="Home" class="w-8 h-8">
+                        <span class="text-red-600 text-xl font-bold">+</span>
+                        <img src="{{ asset('assets/img/sec7.7-white-car-icon.png') }}" alt="Car" class="w-8 h-8">
+                        <span class="text-red-600 text-xl font-bold">+</span>
+                        <img src="{{ asset('assets/img/sec7.8-white-food-icon.png') }}" alt="Food" class="w-8 h-8">
+                    </div>
 
-                                <!-- Items List -->
-                                <ul class="space-y-2">
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
-                                        <span>هاتف ذكي</span>
-                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔺</span>
-                                    </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
-                                        <span>اشعار اجير</span>
-                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔺</span>
-                                    </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
-                                        <span>ملابس موحدة</span>
-                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔺</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <!-- Items List - غير شامل -->
+                    <ul class="space-y-3 flex flex-col items-start">
+                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                            <span class="text-red-500 text-base w-6 text-center">🔺</span>
+                            <span>هاتف ذكي</span>
+                        </li>
+                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                            <span class="text-red-500 text-base w-6 text-center">🔺</span>
+                            <span>اشعار اجير</span>
+                        </li>
+                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                            <span class="text-red-500 text-base w-6 text-center">🔺</span>
+                            <span>ملابس موحدة</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
             <!-- Bottom red accent line -->
             <div class="w-24 h-1 bg-red-600 mt-10 mx-auto"></div>
@@ -1111,19 +1117,19 @@
             <!-- Main Title - Creative Layout -->
             <div class="mb-10">
                 <!-- First line: قانوني -->
-                <div class="text-7xl md:text-8xl font-black text-white leading-none mb-2">احتضان</div>
+                <div class="text-7xl md:text-6xl font-black text-white leading-none mb-2">احتضان قانوني</div>
 
-                <!-- Second line: الشامل -->
-                <div class="relative inline-block mb-4">
-                    <span class="text-5xl md:text-6xl font-black text-white border-b-4 border-red-600 pb-2">قانوني</span>
-                </div>
+{{--                <!-- Second line: الشامل -->--}}
+{{--                <div class="relative inline-block mb-4">--}}
+{{--                    <span class="text-5xl md:text-6xl font-black text-white border-b-4 border-red-600 pb-2">قانوني</span>--}}
+{{--                </div>--}}
 
                 <!-- Third line: جميع المهن والجنسيات -->
                 <div class="mt-4">
-                    <div class="text-5xl md:text-6xl font-black text-white leading-tight">شامل جميع</div>
+                    <div class="text-5xl md:text-4xl font-black text-white leading-tight">شامل جميع</div>
                     <div class="flex items-center gap-4 mt-2">
-                        <span class="text-4xl md:text-5xl font-black text-red-600">المهن</span>
-                        <span class="text-4xl md:text-5xl font-black text-white">والجنسيات</span>
+                        <span class="text-4xl md:text-3xl font-black text-red-600">المهن</span>
+                        <span class="text-4xl md:text-3xl font-black text-white">والجنسيات</span>
                     </div>
                 </div>
             </div>
@@ -1454,10 +1460,7 @@
             <!-- Brand -->
             <div class="md:col-span-2">
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center font-black text-2xl">ن</div>
-                    <div>
-                        <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="header-logo">
-                    </div>
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="max-w-[150px] h-auto">
                 </div>
                 <p class="text-white-400 leading-relaxed max-w-md">
                     شراكة رائدة في تطوير الأعمال بالمملكة العربية السعودية والشرق الأوسط،
