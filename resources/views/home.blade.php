@@ -3,470 +3,1500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $settings['company_name_ar'] ?? 'ناشط' }} - {{ $settings['company_tagline_en'] ?? 'We Drive Your Strong Sales' }}</title>
+    <title>{{ $settings['company_name_ar'] ?? 'ناشط' }} - مجموعة ناشط الاستثمارية</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
-        *, *::before, *::after { font-family: 'Cairo', sans-serif; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { background: #111; color: #fff; overflow-x: hidden; }
-
-        /* Colors */
-        :root { --red: #dc2626; --dark: #111111; --dark2: #1c1c1c; --dark3: #252525; }
-
-        /* Navbar */
-        .navbar-scroll { background: rgba(17,17,17,0.97) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-
-        /* Hero */
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(17,17,17,0.96) 0%, rgba(28,28,28,0.88) 100%),
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80') center/cover no-repeat;
-            min-height: 100vh;
-        }
-        .hero-line { width: 80px; height: 4px; background: var(--red); display: inline-block; }
-        .hero-badge { background: rgba(220,38,38,0.15); border: 1px solid rgba(220,38,38,0.4); }
-
-        /* Red diagonal decorations */
-        .red-diagonal {
-            position: absolute; width: 6px; top: 0; bottom: 0; background: var(--red);
-            transform: skewX(-8deg);
+        * {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Section headings */
-        .section-tag { color: var(--red); font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-        .section-divider { width: 60px; height: 3px; background: var(--red); }
+        body {
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-        /* Service cards */
-        .service-card {
-            background: var(--dark2);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            transition: all 0.3s ease;
+        /* Custom Colors */
+        :root {
+            --red: #dc2626;
+            --red-dark: #b91c1c;
+            --red-light: #ef4444;
+            --dark: #000000;
+            --dark-2: #111111;
+            --dark-3: #1a1a1a;
+        }
+
+        /* Section Styles */
+        .section-wrapper {
             position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
             overflow: hidden;
         }
-        .service-card::before {
-            content: '';
-            position: absolute; top: 0; right: 0; left: 0; height: 3px;
+
+        .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Red Accents */
+        .red-bar {
+            width: 80px;
+            height: 4px;
             background: var(--red);
-            transform: scaleX(0); transform-origin: right;
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover { transform: translateY(-6px); border-color: rgba(220,38,38,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .service-card:hover::before { transform: scaleX(1); }
-        .service-icon { width: 60px; height: 60px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.25); border-radius: 12px; }
-        .feature-chip { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 4px 14px; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 6px; }
-        .feature-chip-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
-
-        /* Stats */
-        .stats-bar { background: var(--red); }
-        .stat-item { border-right: 1px solid rgba(255,255,255,0.2); }
-        .stat-item:last-child { border-right: none; }
-
-        /* Why us */
-        .why-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; transition: all 0.3s; }
-        .why-card:hover { background: rgba(220,38,38,0.08); border-color: rgba(220,38,38,0.3); transform: translateY(-4px); }
-        .why-icon { width: 56px; height: 56px; background: rgba(220,38,38,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-
-        /* Counter animation */
-        .counter { font-variant-numeric: tabular-nums; }
-
-        /* CTA */
-        .cta-bg {
-            background: linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #b91c1c 100%);
-            position: relative; overflow: hidden;
-        }
-        .cta-bg::before {
-            content: ''; position: absolute; inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            margin: 1rem 0;
         }
 
-        /* Mobile menu */
-        #mobile-menu { display: none; }
-        #mobile-menu.open { display: block; }
+        .red-bar-center {
+            width: 80px;
+            height: 4px;
+            background: var(--red);
+            margin: 1rem auto;
+        }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--dark); }
-        ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+        /* Text Styles */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--red);
+            text-stroke: 2px var(--red);
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220,38,38,0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--red);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(220,38,38,0.2);
+        }
+
+        .service-chip {
+            background: rgba(220,38,38,0.1);
+            border: 1px solid rgba(220,38,38,0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fff;
+            font-size: 0.875rem;
+        }
+
+        .service-chip::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--red);
+            border-radius: 50%;
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+        }
+
+        .navbar-scrolled {
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-2);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--red);
+            border-radius: 4px;
+        }
+        .section-logo {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 20;
+            max-width: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .section-logo {
+                max-width: 100px;
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+        /* Mobile Menu */
+        #mobile-menu {
+            display: none;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220,38,38,0.2);
+        }
+
+        #mobile-menu.open {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 py-4">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#home" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 bg-red-600 rounded-lg flex items-center justify-center font-black text-xl shadow-lg group-hover:bg-red-700 transition">
-                        N
-                    </div>
-                    <div>
-                        <div class="text-xl font-black leading-none">{{ $settings['company_name_ar'] ?? 'ناشط' }}</div>
-                        <div class="text-xs text-gray-400 leading-none mt-0.5">{{ $settings['company_tagline_en'] ?? 'We Drive Your Strong Sales' }}</div>
-                    </div>
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar" class="navbar">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center font-black text-2xl transform group-hover:scale-110 transition">
+                    ن
+                </div>
+                <div>
+                    <div class="text-xl font-black leading-none">{{ $settings['company_name_ar'] ?? 'ناشط' }}</div>
+                    <div class="text-xs text-white-400 leading-none mt-1">مجموعة استثمارية رائدة</div>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-white-300 hover:text-red-500 transition font-medium">الرئيسية</a>
+                <a href="#section2" class="text-white-300 hover:text-red-500 transition font-medium">من نحن</a>
+                <a href="#section3" class="text-white-300 hover:text-red-500 transition font-medium">خدماتنا</a>
+                <a href="#section7" class="text-white-300 hover:text-red-500 transition font-medium">التدقيق الميداني</a>
+                <a href="#section11" class="text-white-300 hover:text-red-500 transition font-medium">لماذا نحن</a>
+                <a href="#contact" class="text-white-300 hover:text-red-500 transition font-medium">تواصل معنا</a>
+            </div>
+
+            <!-- Contact Button & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
+                   class="hidden md:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-xl font-bold transition shadow-lg shadow-red-900/30">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    {{ $settings['company_phone'] ?? '٠٥٠٠٩٢٨٦٨٦' }}
                 </a>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#home"    class="text-sm text-gray-300 hover:text-red-500 transition font-medium">الرئيسية</a>
-                    <a href="#about"   class="text-sm text-gray-300 hover:text-red-500 transition font-medium">من نحن</a>
-                    <a href="#services" class="text-sm text-gray-300 hover:text-red-500 transition font-medium">خدماتنا</a>
-                    <a href="#why-us"  class="text-sm text-gray-300 hover:text-red-500 transition font-medium">لماذا نحن</a>
-                    <a href="#contact" class="text-sm text-gray-300 hover:text-red-500 transition font-medium">تواصل معنا</a>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
-                       class="hidden md:inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition shadow-lg shadow-red-900/30">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        {{ $settings['company_phone'] ?? '0500928686' }}
-                    </a>
-                    <!-- Mobile toggle -->
-                    <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="md:hidden text-gray-300 p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden mt-4 bg-gray-900 rounded-xl p-4 border border-gray-800">
-                <a href="#home"     class="block py-2.5 px-4 text-gray-300 hover:text-red-500 hover:bg-gray-800 rounded-lg transition">الرئيسية</a>
-                <a href="#about"    class="block py-2.5 px-4 text-gray-300 hover:text-red-500 hover:bg-gray-800 rounded-lg transition">من نحن</a>
-                <a href="#services" class="block py-2.5 px-4 text-gray-300 hover:text-red-500 hover:bg-gray-800 rounded-lg transition">خدماتنا</a>
-                <a href="#why-us"   class="block py-2.5 px-4 text-gray-300 hover:text-red-500 hover:bg-gray-800 rounded-lg transition">لماذا نحن</a>
-                <a href="#contact"  class="block py-2.5 px-4 text-gray-300 hover:text-red-500 hover:bg-gray-800 rounded-lg transition">تواصل معنا</a>
-                <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}" class="block mt-2 py-2.5 px-4 bg-red-600 text-white rounded-lg text-center font-semibold">اتصل الآن</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ===== HERO ===== -->
-    <section id="home" class="hero-bg flex items-center relative">
-        <!-- Red diagonal bars (decorative) -->
-        <div class="absolute top-0 bottom-0 left-0 w-2 bg-red-600"></div>
-        <div class="absolute top-0 bottom-0" style="left:16px;width:4px;background:rgba(220,38,38,0.4)"></div>
-
-        <div class="max-w-7xl mx-auto px-6 py-40 w-full">
-            <div class="max-w-3xl">
-                <div class="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6">
-                    <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                    <span class="text-red-400 text-sm font-semibold">شركة رائدة منذ عام {{ $settings['company_founded_year'] ?? '1990' }}</span>
-                </div>
-
-                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
-                    {{ $settings['hero_title_ar'] ?? 'المواد الإعلانية' }}
-                    <span class="block text-red-500">{{ $settings['hero_subtitle_ar'] ?? 'والدعائية' }}</span>
-                </h1>
-
-                <p class="text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
-                    {{ $settings['company_description_ar'] ?? 'شراكة رائدة في تطوير الأعمال بالمملكة العربية السعودية والشرق الأوسط' }}
-                </p>
-
-                <div class="flex flex-wrap gap-4">
-                    <a href="#services"
-                       class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold transition shadow-2xl shadow-red-900/40 hover:shadow-red-900/60 hover:-translate-y-0.5">
-                        استكشف خدماتنا
-                        <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </a>
-                    <a href="#contact"
-                       class="inline-flex items-center gap-2 border border-gray-600 hover:border-red-500 text-gray-300 hover:text-white px-8 py-4 rounded-xl text-lg font-bold transition hover:-translate-y-0.5">
-                        تواصل معنا
-                    </a>
-                </div>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="md:hidden text-white-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
         </div>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500">
-            <span class="text-xs">اسحب للأسفل</span>
-            <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center pt-1">
-                <div class="w-1 h-2 bg-red-500 rounded-full animate-bounce"></div>
-            </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden mt-4 rounded-2xl p-4">
+            <a href="#home" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">الرئيسية</a>
+            <a href="#section2" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">من نحن</a>
+            <a href="#section3" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">خدماتنا</a>
+            <a href="#section7" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">التدقيق الميداني</a>
+            <a href="#section11" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">لماذا نحن</a>
+            <a href="#contact" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">تواصل معنا</a>
+            <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}" class="block mt-2 py-3 px-4 bg-red-600 text-white rounded-xl text-center font-bold">اتصل الآن</a>
         </div>
-    </section>
+    </div>
+</nav>
 
-    <!-- ===== STATS BAR ===== -->
-    <div class="stats-bar py-6">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-0">
-                <div class="stat-item text-center py-4 px-6">
-                    <div class="text-3xl font-black counter" data-target="{{ date('Y') - intval($settings['company_founded_year'] ?? 1990) }}">0</div>
-                    <div class="text-sm opacity-80 mt-1">سنة خبرة</div>
+<!-- ===== SECTION 1 - COMPANY PROFILE ===== -->
+<section id="home" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section1.png') }}');">
+    <div ></div>
+    <div class="section-content">
+        <div class="max-w-3xl" data-aos="fade-up">
+            <div class="flex justify-start" data-aos="fade-left">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="max-w-full h-auto w-96">
+            </div>
+
+            <div class="red-bar mb-6"></div>
+
+            <!-- First paragraph -->
+            <p class="text-xl text-white-300 leading-relaxed mb-4">
+                مجموعة ناشط الاستثمارية - شراكة رائدة في تطوير الأعمال<br>
+                بالمملكة العربية السعودية والشرق الأوسط
+            </p>
+
+            <!-- Second paragraph (moved below) -->
+            <p class="text-lg text-white-400 leading-relaxed mb-8">
+                وهي مجموعة استثمارية سعودية - أجنبية زاخرة بتاريخها وأعمالها المتنوعة،
+                تأسست في عام {{ $settings['company_founded_year'] ?? '١٩٩٠' }}.
+            </p>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap gap-4">
+                <div class="bg-red-600/10 border border-red-600/30 rounded-2xl p-4 text-center min-w-[120px]">
+                    <div class="text-2xl font-black text-red-500">+30</div>
+                    <div class="text-sm">عام خبرة</div>
                 </div>
-                <div class="stat-item text-center py-4 px-6">
-                    <div class="text-3xl font-black counter" data-target="8">0</div>
-                    <div class="text-sm opacity-80 mt-1">خدمات متكاملة</div>
-                </div>
-                <div class="stat-item text-center py-4 px-6">
-                    <div class="text-3xl font-black">24/7</div>
-                    <div class="text-sm opacity-80 mt-1">دعم متواصل</div>
-                </div>
-                <div class="stat-item text-center py-4 px-6">
-                    <div class="text-3xl font-black">100%</div>
-                    <div class="text-sm opacity-80 mt-1">جودة وموثوقية</div>
+                <div class="bg-red-600/10 border border-red-600/30 rounded-2xl p-4 text-center min-w-[120px]">
+                    <div class="text-2xl font-black text-red-500">+1000</div>
+                    <div class="text-sm">عميل</div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+<!-- ===== SECTION 2 - HERO ===== -->
+<section id="section2" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section2.png') }}');">
+    <!-- Logo in top right corner for all sections -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="py-24" style="background:var(--dark2)">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <p class="section-tag mb-3">من نحن</p>
-                    <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
-                        شراكة رائدة في
-                        <span class="text-red-500">تطوير الأعمال</span>
-                    </h2>
-                    <div class="section-divider mb-6"></div>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                        {{ $settings['company_description_ar'] ?? 'شراكة رائدة في تطوير الأعمال بالمملكة العربية السعودية والشرق الأوسط' }}
-                    </p>
-                    <p class="text-gray-400 leading-relaxed">
-                        وهي مجموعة استثمارية سعودية - أجنبية زاخرة بتاريخها وأعمالها المتنوعة، تأسست في عام {{ $settings['company_founded_year'] ?? '1990' }}.
-                    </p>
+    <div style="background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1000">
+            <!-- Main Title - Styled like screenshot -->
+            <div class="mb-8">
+                <h1 class="text-7xl md:text-9xl font-black text-white leading-none mb-2">مصفـــــــف</h1>
+                <h1 class="text-7xl md:text-9xl font-black text-red-600 leading-none">أرفـــف</h1>
+            </div>
+
+            <!-- Service Features Grid - Styled exactly like screenshot -->
+            <div class="grid grid-cols-2 gap-x-8 gap-y-4 mt-12">
+                <!-- Row 1 -->
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-black text-red-500 min-w-[40px]">8</span>
+                    <span class="text-xl text-white">ساعات عمل</span>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
-                        <div class="text-4xl font-black text-red-500 counter" data-target="{{ date('Y') - intval($settings['company_founded_year'] ?? 1990) }}">0</div>
-                        <div class="text-gray-300 mt-2 font-medium">سنة في السوق</div>
-                    </div>
-                    <div class="bg-red-600 rounded-2xl p-6">
-                        <div class="text-4xl font-black">{{ $settings['company_founded_year'] ?? '1990' }}</div>
-                        <div class="text-red-100 mt-2 font-medium">سنة التأسيس</div>
-                    </div>
-                    <div class="bg-red-600 rounded-2xl p-6">
-                        <div class="text-4xl font-black">KSA</div>
-                        <div class="text-red-100 mt-2 font-medium">المملكة العربية السعودية</div>
-                    </div>
-                    <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
-                        <div class="text-4xl font-black text-red-500">8+</div>
-                        <div class="text-gray-300 mt-2 font-medium">خدمات متخصصة</div>
-                    </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <span class="text-xl text-white">مركبة نقل حديثة</span>
                 </div>
+
+                <!-- Row 2 -->
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <span class="text-xl text-white">سكن + طعام</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <span class="text-xl text-white">هاتف ذكي</span>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <span class="text-xl text-white">شهادة تدريب</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>
+                    <span class="text-xl text-white">تغطية شاملة</span>
+                </div>
+            </div>
+
+            <!-- Additional Service Text - As shown in screenshot -->
+            <div class="mt-8 border-t border-red-600/30 pt-6">
+                <p class="text-lg text-white-300 leading-relaxed">
+                    خدمة الإدارة التشغيلية المتكاملة شاملة تطبيق ناشط الرقمي متاحة عند الطلب
+                </p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ===== SERVICES ===== -->
-    <section id="services" class="py-24" style="background:var(--dark)">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <p class="section-tag mb-3">ما نقدمه</p>
-                <h2 class="text-4xl md:text-5xl font-black mb-4">خدماتنا <span class="text-red-500">المتميزة</span></h2>
-                <div class="section-divider mx-auto mb-6"></div>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">نقدم مجموعة متكاملة من الخدمات الاحترافية لتطوير أعمالك وتعزيز مبيعاتك</p>
-            </div>
-
-            @php
-                $icons = [
-                    'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
-                    'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
-                    'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
-                    'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
-                    'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
-                    'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
-                    'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-                    'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3',
-                ];
-            @endphp
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                @foreach($services as $index => $service)
-                <div class="service-card p-6">
-                    <!-- Icon -->
-                    <div class="service-icon flex items-center justify-center mb-5">
-                        <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ $icons[$index % count($icons)] }}"/>
-                        </svg>
-                    </div>
-
-                    <!-- Title -->
-                    <h3 class="text-xl font-bold mb-1">{{ $service->title_ar }}</h3>
-                    @if($service->title_en)
-                    <p class="text-red-500 text-sm font-medium mb-3">{{ $service->title_en }}</p>
-                    @endif
-
-                    <!-- Description -->
-                    @if($service->description_ar)
-                    <p class="text-gray-400 text-sm leading-relaxed mb-5">{{ $service->description_ar }}</p>
-                    @endif
-
-                    <!-- Features as chips -->
-                    @if($service->features->count() > 0)
-                    <div class="flex flex-wrap gap-2">
-                        @foreach($service->features as $feature)
-                        <span class="feature-chip text-gray-300">
-                            <span class="feature-chip-dot"></span>
-                            {{ $feature->feature_ar }}
-                        </span>
-                        @endforeach
-                    </div>
-                    @endif
-                </div>
-                @endforeach
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ===== WHY CHOOSE US ===== -->
-    <section id="why-us" class="py-24" style="background:var(--dark2)">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-                <!-- Left: heading + description -->
-                <div class="sticky top-24">
-                    <p class="section-tag mb-3">{{ $settings['why_choose_title_ar'] ?? 'لماذا نحن؟' }}</p>
-                    <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
-                        {{ $settings['why_choose_subtitle_ar'] ?? 'لأننا نصنع الفرق' }}
-                    </h2>
-                    <div class="section-divider mb-6"></div>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-8">{{ $settings['why_choose_description_ar'] ?? '' }}</p>
-                    <a href="#contact"
-                       class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-7 py-3.5 rounded-xl font-bold transition shadow-lg shadow-red-900/30">
-                        تواصل معنا الآن
-                    </a>
-                </div>
 
-                <!-- Right: feature grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    @php
-                        $whyItems = [
-                            ['icon'=>'M13 10V3L4 14h7v7l9-11h-7z',           'title'=>'خبرة تشغيلية متكاملة',           'desc'=>'أكثر من 30 عامًا من التميز والكفاءة في السوق السعودية'],
-                            ['icon'=>'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z','title'=>'سرعة التوريد والاستجابة',       'desc'=>'نضمن توريد الكوادر في أقصر وقت ممكن'],
-                            ['icon'=>'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z','title'=>'دعم قانوني مرن','desc'=>'خدمة الاحتضان القانوني الشاملة'],
-                            ['icon'=>'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z','title'=>'دعم وإشراف متكامل','desc'=>'متابعة ميدانية وتقارير دورية شاملة'],
-                            ['icon'=>'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z','title'=>'أسعار تنافسية وقيمة مضافة','desc'=>'أفضل الأسعار مع ضمان الجودة العالية'],
-                            ['icon'=>'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z','title'=>'الاستجابة السريعة','desc'=>'معالجة المشكلات فورًا لضمان استمرارية العمل'],
-                            ['icon'=>'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z','title'=>'التميز في الحلول الرقمية','desc'=>'تطبيق ناشط الرقمي للإدارة التشغيلية المتكاملة'],
-                            ['icon'=>'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z','title'=>'معايير جودة عالية','desc'=>'التزام تام بأعلى معايير الجودة والأمان'],
-                        ];
-                    @endphp
+<!-- ===== SECTION 3 - AUDITING SERVICES ===== -->
+<section id="section3" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section3.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
 
-                    @foreach($whyItems as $item)
-                    <div class="why-card p-5">
-                        <div class="why-icon mb-4">
-                            <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ $item['icon'] }}"/>
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-base mb-1">{{ $item['title'] }}</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">{{ $item['desc'] }}</p>
-                    </div>
-                    @endforeach
-                </div>
+    <div style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <!-- Header with Arabic and English -->
+            <div class="mb-8">
+                <h2 class="text-6xl md:text-7xl font-black text-white leading-tight mb-2">خدمات التدقيق</h2>
+                <h3 class="text-3xl md:text-4xl text-red-600 font-bold tracking-wide">Auditing Service</h3>
             </div>
-        </div>
-    </section>
 
-    <!-- ===== CTA ===== -->
-    <section id="contact" class="py-28 cta-bg">
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <p class="text-red-200 text-sm font-semibold uppercase tracking-widest mb-4">تواصل معنا</p>
-            <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                نحن نزيد مبيعاتك،<br>ونبرز علامتك التجارية
-            </h2>
-            <p class="text-xl text-red-100 leading-relaxed mb-10 max-w-3xl mx-auto">
-                لأننا لا نؤمن فقط بتحقيق النجاح، بل بتحقيق النجاح الذي يدوم ويصنع الفارق
+            <!-- Red accent line -->
+            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+
+            <!-- Main tagline -->
+            <p class="text-2xl md:text-3xl text-white font-bold mb-12 leading-relaxed">
+                نرى ما لا يرى... لتبقى في صدارة السوق
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
-                   class="inline-flex items-center gap-3 bg-white text-red-600 px-10 py-4 rounded-xl text-xl font-black hover:bg-gray-100 transition shadow-2xl hover:-translate-y-0.5">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    {{ $settings['company_phone'] ?? '0500928686' }}
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer style="background:#0a0a0a" class="py-16 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-10 mb-12">
-                <!-- Brand -->
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-11 h-11 bg-red-600 rounded-lg flex items-center justify-center font-black text-xl">N</div>
-                        <div>
-                            <div class="text-xl font-black">{{ $settings['company_name_ar'] ?? 'ناشط' }}</div>
-                            <div class="text-xs text-gray-500">{{ $settings['company_tagline_en'] ?? 'We Drive Your Strong Sales' }}</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 leading-relaxed max-w-sm">
-                        {{ $settings['company_description_ar'] ?? 'شراكة رائدة في تطوير الأعمال بالمملكة العربية السعودية والشرق الأوسط' }}
-                    </p>
-                </div>
-
-                <!-- Quick links -->
+            <!-- Service Details Grid -->
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Right side: Service list -->
                 <div>
-                    <h4 class="font-bold text-gray-200 mb-4">روابط سريعة</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="#home"     class="text-gray-500 hover:text-red-500 transition text-sm">الرئيسية</a></li>
-                        <li><a href="#about"    class="text-gray-500 hover:text-red-500 transition text-sm">من نحن</a></li>
-                        <li><a href="#services" class="text-gray-500 hover:text-red-500 transition text-sm">خدماتنا</a></li>
-                        <li><a href="#why-us"   class="text-gray-500 hover:text-red-500 transition text-sm">لماذا نحن</a></li>
-                        <li><a href="#contact"  class="text-gray-500 hover:text-red-500 transition text-sm">تواصل معنا</a></li>
+                    <h4 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-red-600 inline-block"></span>
+                        مهام الخدمة
+                    </h4>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-lg">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">تحقيق توافر المنتجات</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-lg">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">مراجعة الأسعار والعروض الترويجية</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-lg">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">تحليل حركة المنافسين</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-lg">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">رصد حالة البضائع والمتاجر</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-lg">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">المتاجر "الافتتاحية الجديدة"</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-lg">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">تقديم تقارير تحليلية مصورة</span>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
-                <div>
-                    <h4 class="font-bold text-gray-200 mb-4">تواصل معنا</h4>
-                    <div class="space-y-3">
-                        <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
-                           class="flex items-center gap-2 text-gray-400 hover:text-red-500 transition text-sm">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            {{ $settings['company_phone'] ?? '0500928686' }}
-                        </a>
-                        <p class="text-gray-500 text-sm">المملكة العربية السعودية</p>
-                        <p class="text-gray-500 text-sm">تأسست عام {{ $settings['company_founded_year'] ?? '1990' }}</p>
+                <!-- Left side: Features/Stats -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-3xl p-8">
+                    <div class="space-y-6">
+                        <!-- Fast delivery stat -->
+                        <div class="flex items-center justify-between border-b border-white-700 pb-4">
+                            <span class="text-white-300 text-lg">إرسالنا</span>
+                            <span class="text-3xl font-black text-red-500">⏱️</span>
+                        </div>
+
+                        <!-- Success message -->
+                        <div class="mt-6">
+                            <p class="text-2xl text-white font-bold leading-relaxed">
+                                من خلال هذا النجاح،<br>
+                                يبدأ بالخدمات...
+                            </p>
+                        </div>
+
+                        <!-- Optional: Add some metrics -->
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-red-500">24/7</div>
+                                <div class="text-sm text-white-400">متابعة مستمرة</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-red-500">100%</div>
+                                <div class="text-sm text-white-400">دقة في التقارير</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-600 text-sm">&copy; {{ date('Y') }} {{ $settings['company_name_ar'] ?? 'ناشط' }}. جميع الحقوق محفوظة.</p>
-                @auth
-                <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-red-500 transition text-sm">لوحة التحكم</a>
-                @else
-                <a href="{{ route('login') }}" class="text-gray-600 hover:text-red-500 transition text-sm">تسجيل دخول المشرف</a>
-                @endauth
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-12"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator (optional - you can keep or remove) -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 4 - BRAND AMBASSADOR ===== -->
+<section id="section4" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section4.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <!-- Header -->
+            <div class="mb-8">
+                <h2 class="text-6xl md:text-7xl font-black text-white leading-tight mb-2">سفير العلامة التجارية</h2>
+                <p class="text-2xl text-red-600 font-bold tracking-wide">شاملة جميع القطاعات التجارية</p>
+            </div>
+
+            <!-- Red accent line -->
+            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Right side: Features list (matching screenshot) -->
+                <div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">السيارات معتمدة</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">ملابس موحدة</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">شهادة صحية</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">تأمين طبي</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">هاتف فوري</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">تغطية شاملة</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Left side: Additional info -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-3xl p-8">
+                    <!-- Fast delivery stat -->
+                    <div class="flex items-center justify-between border-b border-white-700 pb-4 mb-6">
+                        <span class="text-white-300 text-lg">إرسالنا</span>
+                        <span class="text-3xl font-black text-red-500">⚡</span>
+                    </div>
+
+                    <!-- Operational service text -->
+                    <div class="mt-4">
+                        <p class="text-xl text-white leading-relaxed">
+                            خدمة الإدارة التشغيلية المتكاملة شاملة تطبيق<br>
+                            ناشط الرقمي متاحة عند الطلب
+                        </p>
+                    </div>
+
+                    <!-- Optional: Quick stats -->
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="text-center bg-red-600/10 rounded-xl p-3">
+                            <div class="text-2xl font-black text-red-500">+500</div>
+                            <div class="text-xs text-white-400">مندوب</div>
+                        </div>
+                        <div class="text-center bg-red-600/10 rounded-xl p-3">
+                            <div class="text-2xl font-black text-red-500">24/7</div>
+                            <div class="text-xs text-white-400">دعم متواصل</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-12"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 5 - ADVERTISING MATERIALS ===== -->
+<section id="section5" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section5.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <!-- Header -->
+            <div class="mb-8">
+                <h2 class="text-6xl md:text-7xl font-black text-white leading-tight mb-2">المواد الإعلانية والدعائية</h2>
+                <p class="text-2xl text-red-600 font-bold">صناعة وتنفيذ جميع الطلبات</p>
+            </div>
+
+            <!-- Red accent line -->
+            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+
+            <!-- Brand Logo/Name -->
+            <div class="mb-8">
+                <span class="text-3xl md:text-4xl font-black text-white border-b-2 border-red-600 pb-2">Nashet</span>
+            </div>
+
+            <!-- Products Grid - Two columns as in screenshot -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-3xl">
+                <!-- Column 1 -->
+                <div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">الزول - لاب</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">المطبوعات</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">الشاشة الرقمية</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">طاولة العرض</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">اللابين الموصدة</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">البستادات</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg border-b border-white-800 pb-3">
+                            <span class="text-red-500 font-bold text-xl">•</span>
+                            <span class="text-white-200">اللافتات التجارية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Features/Services -->
+            <div class="mt-12 grid md:grid-cols-3 gap-4">
+                <div class="bg-red-600/10 border border-red-600/20 rounded-xl p-4 text-center">
+                    <div class="text-xl font-bold text-red-500">تصميم</div>
+                    <div class="text-sm text-white-400">تصاميم إبداعية</div>
+                </div>
+                <div class="bg-red-600/10 border border-red-600/20 rounded-xl p-4 text-center">
+                    <div class="text-xl font-bold text-red-500">طباعة</div>
+                    <div class="text-sm text-white-400">جودة عالية</div>
+                </div>
+                <div class="bg-red-600/10 border border-red-600/20 rounded-xl p-4 text-center">
+                    <div class="text-xl font-bold text-red-500">تركيب</div>
+                    <div class="text-sm text-white-400">خدمة متكاملة</div>
+                </div>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-12"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== SECTION 6 - LABOR RENTAL ===== -->
+<!-- ===== SECTION 6 - VEHICLE RENTAL ===== -->
+<section id="section6" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section6.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <!-- Header -->
+            <div class="mb-8">
+                <h2 class="text-6xl md:text-7xl font-black text-white leading-tight mb-2">تأجيــر مركبـــات نقــــل</h2>
+                <p class="text-2xl text-red-600 font-bold">(شاملة السائق والمركبة البديلة)</p>
+            </div>
+
+            <!-- Red accent line -->
+            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+
+            <!-- Main Vehicle - Dina 4.5 Ton -->
+            <div class="mb-10">
+                <div class="inline-block bg-red-600/20 border-2 border-red-600 rounded-2xl px-8 py-4">
+                    <span class="text-4xl md:text-5xl font-black text-white">دينـــــــا</span>
+                    <span class="text-3xl md:text-4xl font-black text-red-600 mr-4">4.5 طــن</span>
+                </div>
+            </div>
+
+            <!-- Vehicle Types Grid - 3 columns as in screenshot -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+                <!-- Row 1 -->
+                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
+                    <span class="text-xl font-bold text-white">فيبر</span>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
+                    <span class="text-xl font-bold text-white">ميـرو</span>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
+                    <span class="text-xl font-bold text-white">سيـــدان</span>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
+                    <span class="text-xl font-bold text-white">ميـرو</span>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
+                    <span class="text-xl font-bold text-white">دوكـــر بضائــع</span>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
+                    <span class="text-xl font-bold text-white">ميـرو</span>
+                </div>
+            </div>
+
+            <!-- Features Grid - Bottom section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
+                    <span class="text-red-500 font-bold text-lg">✓</span>
+                    <span class="text-white-200">عداد مفتوح</span>
+                </div>
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
+                    <span class="text-red-500 font-bold text-lg">✓</span>
+                    <span class="text-white-200">جهاز تتبع</span>
+                </div>
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
+                    <span class="text-red-500 font-bold text-lg">✓</span>
+                    <span class="text-white-200">هاتف ذكي</span>
+                </div>
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
+                    <span class="text-red-500 font-bold text-lg">✓</span>
+                    <span class="text-white-200">ساعات عمل</span>
+                </div>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-12"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== SECTION 7 - FIELD AUDITING ===== -->
+<!-- ===== SECTION 7 - LABOR RENTAL ===== -->
+<!-- ===== SECTION 7 - LABOR RENTAL ===== -->
+<!-- ===== SECTION 7 - LABOR RENTAL ===== -->
+<section id="section7" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section7.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+
+            <!-- Main Title -->
+            <h2 class="text-5xl md:text-6xl font-black text-white leading-tight mb-2">تأجير عمالة</h2>
+            <p class="text-xl text-gray-300 mb-6">شاملة جميع القطاعات الصناعية والتجارية</p>
+
+            <!-- Red accent line -->
+            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+
+            <!-- Two Column Layout - Exactly as in screenshot -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Right Column - شامل (Included) -->
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-6">شامل</h3>
+                    <ul class="space-y-4">
+                        <li class="text-xl text-gray-200">اشعار اجير</li>
+                        <li class="text-xl text-gray-200">نطاق معفي</li>
+                        <li class="text-xl text-gray-200">ساعات عمل</li>
+                        <li class="text-xl text-gray-200">١٠ ساعات عمل</li>
+                    </ul>
+                </div>
+
+                <!-- Left Column - غير شامل (Not Included) -->
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-6">غير شامل</h3>
+                    <ul class="space-y-4">
+                        <li class="text-xl text-gray-200">اشعار اجير</li>
+                        <li class="text-xl text-gray-200">نطاق معفي</li>
+                        <li class="text-xl text-gray-200">تأمين طبي</li>
+                        <li class="text-xl text-gray-200">ملابس موحدة</li>
+                        <li class="text-xl text-gray-200">هاتف ذكي</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Icons Section - From your assets -->
+            <div class="grid grid-cols-6 gap-2 mt-10 max-w-3xl mx-auto">
+                <!-- Grey Icons -->
+                <div class="flex flex-col items-center">
+                    <img src="{{ asset('assets/img/sec7.3-grey-home-icon.png') }}" alt="Home" class="w-8 h-8 opacity-70">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="{{ asset('assets/img/sec7.4-grey-car-icon.png') }}" alt="Car" class="w-8 h-8 opacity-70">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="{{ asset('assets/img/sec7.5-grey-food-icon.png') }}" alt="Food" class="w-8 h-8 opacity-70">
+                </div>
+
+                <!-- White Icons -->
+                <div class="flex flex-col items-center">
+                    <img src="{{ asset('assets/img/sec7.6-white-home-icon.png') }}" alt="Home" class="w-8 h-8">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="{{ asset('assets/img/sec7.7-white-car-icon.png') }}" alt="Car" class="w-8 h-8">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="{{ asset('assets/img/sec7.8-white-food-icon.png') }}" alt="Food" class="w-8 h-8">
+                </div>
+            </div>
+
+            <!-- Additional service text -->
+            <div class="mt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    خدمة الإدارة التشغيلية المتكاملة شاملة تطبيق ناشط الرقمي متاحة عند الطلب
+                </p>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-10 mx-auto"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-gray-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="section8" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section8.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <!-- Main Title -->
+            <h2 class="text-5xl md:text-6xl font-black text-white leading-tight mb-10">تأجير مندوب مبيعات</h2>
+
+            <!-- Features Grid - 3x2 layout as in screenshot -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl">
+                <!-- Row 1 -->
+                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
+                    <div class="text-4xl font-black text-red-600 mb-2">10</div>
+                    <div class="text-2xl font-bold text-white mb-1">أسعار</div>
+                    <div class="text-lg text-white-400">عمل</div>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
+                    <div class="text-3xl font-black text-red-600 mb-2">⭕</div>
+                    <div class="text-2xl font-bold text-white mb-1">نطاق</div>
+                    <div class="text-lg text-white-400">معفي</div>
+                    <div class="text-sm text-red-500 mt-1">Nitqat</div>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
+                    <div class="text-3xl font-black text-red-600 mb-2">📱</div>
+                    <div class="text-2xl font-bold text-white mb-1">هاتف</div>
+                    <div class="text-lg text-white-400">ذكي</div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
+                    <div class="text-3xl font-black text-red-600 mb-2">📋</div>
+                    <div class="text-2xl font-bold text-white mb-1">اشعار</div>
+                    <div class="text-lg text-white-400">أجير</div>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
+                    <div class="text-3xl font-black text-red-600 mb-2">🏥</div>
+                    <div class="text-2xl font-bold text-white mb-1">تأمين</div>
+                    <div class="text-lg text-white-400">طبي</div>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
+                    <div class="text-3xl font-black text-red-600 mb-2">👕</div>
+                    <div class="text-2xl font-bold text-white mb-1">ملابس</div>
+                    <div class="text-lg text-white-400">موحدة</div>
+                </div>
+            </div>
+
+            <!-- Additional Features Row (optional based on screenshot) -->
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <span class="bg-red-600/20 border border-red-600/30 rounded-full px-4 py-2 text-sm text-white-300">
+                    دوام كامل
+                </span>
+                <span class="bg-red-600/20 border border-red-600/30 rounded-full px-4 py-2 text-sm text-white-300">
+                    تدريب مسبق
+                </span>
+                <span class="bg-red-600/20 border border-red-600/30 rounded-full px-4 py-2 text-sm text-white-300">
+                    متابعة أداء
+                </span>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-12"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== SECTION 9 - DRIVER RENTAL ===== -->
+<section id="section9" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section9.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-6xl mx-auto" data-aos="fade-up">
+            <!-- Main Title - moved up to make room for cards under face -->
+            <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-1">تأجير سائق مركبة نقل</h2>
+            <p class="text-lg text-gray-300 mb-4">لجميع أحجام المركبات و جميع أنواع الرخص</p>
+
+            <!-- Red accent line - shorter -->
+            <div class="w-20 h-1 bg-red-600 mb-6"></div>
+
+            <!-- Three Cards in One Line - Compact version -->
+            <div class="grid grid-cols-3 gap-3 max-w-3xl">
+                <!-- Card 1: نقل خفيف -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-2 px-3 flex flex-col items-center text-center">
+                    <div class="text-red-600 font-black text-sm">نقل</div>
+                    <div class="text-white font-black text-base">خفيف</div>
+                    <div class="text-xs text-gray-300 mt-1">رخصة خاصة</div>
+                </div>
+
+                <!-- Card 2: نقل متوسط -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-2 px-3 flex flex-col items-center text-center">
+                    <div class="text-red-600 font-black text-sm">نقل</div>
+                    <div class="text-white font-black text-base">متوسط</div>
+                    <div class="text-xs text-gray-300 mt-1">رخصة مهنية</div>
+                </div>
+
+                <!-- Card 3: نقل ثقيل -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-2 px-3 flex flex-col items-center text-center">
+                    <div class="text-red-600 font-black text-sm">نقل</div>
+                    <div class="text-white font-black text-base">ثقيل</div>
+                    <div class="text-xs text-gray-300 mt-1">رخصة عمومي</div>
+                </div>
+            </div>
+
+            <!-- Bottom Features - Three cards in one line as shown in screenshot -->
+            <div class="grid grid-cols-3 gap-3 mt-4 max-w-3xl">
+                <!-- تأمين صحي -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
+                    <span class="text-red-500 text-lg">🏥</span>
+                    <div>
+                        <div class="text-white text-xs font-bold">تأمين صحي</div>
+                        <div class="text-[10px] text-gray-400">شامل</div>
+                    </div>
+                </div>
+
+                <!-- 10 ساعات عمل -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
+                    <span class="text-red-500 text-lg">⏰</span>
+                    <div>
+                        <div class="text-white text-xs font-bold">10 ساعات عمل</div>
+                        <div class="text-[10px] text-gray-400">يومياً</div>
+                    </div>
+                </div>
+
+                <!-- ملابس موحدة -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
+                    <span class="text-red-500 text-lg">👕</span>
+                    <div>
+                        <div class="text-white text-xs font-bold">ملابس موحدة</div>
+                        <div class="text-[10px] text-red-500">Nitaqat</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional service text - smaller -->
+            <div class="mt-4 text-right">
+                <p class="text-gray-400 text-xs">
+                    خدمة الإدارة التشغيلية المتكاملة شاملة تطبيق ناشط الرقمي متاحة عند الطلب
+                </p>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-20 h-1 bg-red-600 mt-4"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator - smaller -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-1">
+            <span class="text-gray-400 text-xs">اكتشف المزيد</span>
+            <div class="w-5 h-8 border border-gray-400 rounded-full flex justify-center">
+                <div class="w-0.5 h-1.5 bg-red-500 rounded-full mt-1 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section><!-- ===== SECTION 10 - LEGAL INCUBATION DETAILS ===== -->
+<section id="section10" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section10.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-6xl mx-auto" data-aos="fade-up">
+            <!-- Main Title - Creative Layout -->
+            <div class="mb-10">
+                <!-- First line: قانوني -->
+                <div class="text-7xl md:text-8xl font-black text-white leading-none mb-2">احتضان</div>
+
+                <!-- Second line: الشامل -->
+                <div class="relative inline-block mb-4">
+                    <span class="text-5xl md:text-6xl font-black text-white border-b-4 border-red-600 pb-2">قانوني</span>
+                </div>
+
+                <!-- Third line: جميع المهن والجنسيات -->
+                <div class="mt-4">
+                    <div class="text-5xl md:text-6xl font-black text-white leading-tight">شامل جميع</div>
+                    <div class="flex items-center gap-4 mt-2">
+                        <span class="text-4xl md:text-5xl font-black text-red-600">المهن</span>
+                        <span class="text-4xl md:text-5xl font-black text-white">والجنسيات</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red accent line -->
+            <div class="w-24 h-1 bg-red-600 mb-10"></div>
+
+            <!-- Services Grid - Creative layout inspired by screenshot -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Column 1 -->
+                <div class="space-y-4">
+                    <!-- رصيد جنسيات مفتوح -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-lg text-white-400 mb-1">رصيد</div>
+                        <div class="text-3xl font-bold text-white mb-1">جنسيات</div>
+                        <div class="text-2xl font-black text-red-600">مفتوح</div>
+                    </div>
+
+                    <!-- إدارة التأمين الطبي -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-lg text-white-400 mb-1">إدارة</div>
+                        <div class="text-2xl font-bold text-white mb-1">التأمين الطبي</div>
+                        <div class="flex justify-end">
+                            <span class="text-red-500 text-xl">✓</span>
+                        </div>
+                    </div>
+
+                    <!-- خط ساخن -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-2xl font-bold text-white mb-1">خط</div>
+                        <div class="text-3xl font-black text-red-600">ساخن</div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="space-y-4 mt-6 md:mt-0">
+                    <!-- رصيد مهن مفتوح -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-lg text-white-400 mb-1">رصيد</div>
+                        <div class="text-3xl font-bold text-white mb-1">مهن</div>
+                        <div class="text-2xl font-black text-red-600">مفتوح</div>
+                        <div class="text-right mt-2">
+                            <span class="text-red-500 text-sm">مفتوح</span>
+                        </div>
+                    </div>
+
+                    <!-- إدارة الرواتب -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-lg text-white-400 mb-1">إدارة</div>
+                        <div class="text-3xl font-bold text-white">الرواتب</div>
+                    </div>
+
+                    <!-- Empty space or additional feature -->
+                    <div class="bg-black/20 backdrop-blur-lg border border-red-600/20 rounded-2xl p-5">
+                        <div class="text-center text-white-400 text-sm">
+                            خدمة متكاملة
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="space-y-4 mt-6 md:mt-0">
+                    <!-- إدارة العقود -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-lg text-white-400 mb-1">إدارة</div>
+                        <div class="text-3xl font-bold text-white">العقود</div>
+                    </div>
+
+                    <!-- إدارة طلبات الموظفين -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-lg text-white-400 mb-1">إدارة طلبات</div>
+                        <div class="text-3xl font-bold text-white">الموظفين</div>
+                    </div>
+
+                    <!-- Additional service -->
+                    <div class="bg-red-600/20 backdrop-blur-lg border-2 border-red-600 rounded-2xl p-5 transform hover:scale-105 transition">
+                        <div class="text-center">
+                            <span class="text-white font-bold">دعم قانوني</span>
+                            <span class="text-red-500 text-xl mr-2">24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{{--            <!-- Bottom decorative element with numbers from previous screenshot -->--}}
+{{--            <div class="mt-10 flex justify-center gap-2 text-white-600 text-xs">--}}
+{{--                <span class="text-red-500">1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span>--}}
+{{--                <span class="text-red-500">6</span> <span>7</span> <span>8</span> <span>9</span> <span>10</span>--}}
+{{--                <span>...</span> <span class="text-red-500">∞</span>--}}
+{{--            </div>--}}
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-8 mx-auto"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 11 - WHY US & COMPANY OVERVIEW ===== -->
+<section id="section11" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section11.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-6xl mx-auto" data-aos="fade-up">
+            <!-- Header with dual branding -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+
+                <div class="text-left md:text-right mt-4 md:mt-0">
+                    <div class="text-4xl md:text-5xl font-black text-white">لماذا نحن؟</div>
+                    <p class="text-2xl text-red-600 font-bold mt-2">لأننا نصنع الفرق</p>
+                </div>
+            </div>
+
+            <!-- Red accent line -->
+            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+
+            <!-- Company Description -->
+            <div class="mb-10 max-w-4xl">
+                <p class="text-xl text-white-300 leading-relaxed">
+                    <span class="text-white font-bold">ناشط</span> تقدم حلولاً متكاملة وابتكارية في مجال توريد الموارد البشرية،
+                    المركبات، السائقين، مندوبي المبيعات، العمالة العامة، الخدمات القانونية، وتقدم بالآتي:
+                </p>
+            </div>
+
+            <!-- Main Services Grid - 3 columns -->
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <!-- Column 1 -->
+                <div class="space-y-4">
+                    <!-- المستورد -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span class="text-white-300">مقاييس مالية</span>
+                            </div>
+                            <div class="pr-4 text-white-400 text-sm">
+                                تعزيز في الخطوة الرقمية والتكنولوجيا
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- المستورد (second) -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span class="text-white-300">إدارة المخاطر</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span class="text-white-300">استراتيجية إدارة المخاطر</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="space-y-4">
+                    <!-- المستورد (third) -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span class="text-white-300">إدارة المخاطر</span>
+                            </div>
+                            <div class="text-red-500 font-bold pr-4">
+                                مكافحة
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- المستورد (fourth) -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span class="text-white-300">إدارة المخاطر</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span class="text-white-300">إدارة المخاطر</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="space-y-4">
+                    <!-- المستورد (fifth) -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span class="text-white-300">إدارة المخاطر</span>
+                            </div>
+                            <div class="text-red-500 font-bold">
+                                إدارة المخاطر
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional feature card -->
+                    <div class="bg-red-600/20 backdrop-blur-lg border-2 border-red-600 rounded-2xl p-5">
+                        <div class="text-center">
+                            <span class="text-white font-bold text-lg">حلول متكاملة</span>
+                            <span class="text-red-500 text-sm block mt-1">لجميع احتياجاتكم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid (from original) - moved to bottom -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
+                    <div class="text-red-500 text-2xl mb-2">⚡</div>
+                    <h4 class="text-sm font-bold text-white mb-1">سرعة التوريد والاستجابة</h4>
+                    <p class="text-xs text-white-400">توريد الكوادر في أقصر وقت</p>
+                </div>
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
+                    <div class="text-red-500 text-2xl mb-2">⭐</div>
+                    <h4 class="text-sm font-bold text-white mb-1">معايير جودة عالية</h4>
+                    <p class="text-xs text-white-400">التزام بأعلى معايير الجودة</p>
+                </div>
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
+                    <div class="text-red-500 text-2xl mb-2">⚖️</div>
+                    <h4 class="text-sm font-bold text-white mb-1">حلول قانونية مرنة</h4>
+                    <p class="text-xs text-white-400">احتضان قانوني شامل</p>
+                </div>
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
+                    <div class="text-red-500 text-2xl mb-2">💰</div>
+                    <h4 class="text-sm font-bold text-white mb-1">أسعار تنافسية</h4>
+                    <p class="text-xs text-white-400">أفضل الأسعار مع ضمان الجودة</p>
+                </div>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mt-10 mx-auto"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-white-400 text-sm">اكتشف المزيد</span>
+            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
+                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== SECTION 12 - CTA ===== -->
+<!-- ===== SECTION 12 - FINAL CTA ===== -->
+<section id="section12" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section12.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.85) 0%, rgba(0,0,0,0.7) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-5xl mx-auto text-center" data-aos="zoom-in">
+
+            <!-- First Message - as paragraph -->
+            <p class="text-2xl md:text-3xl text-white leading-relaxed mb-6">
+                لأننا لا نؤمن فقط بتحقيق النجاح، بل<br>
+                بتحقيق النجاح الذي يدوم ويصنع الفارق
+            </p>
+
+            <!-- Second Message - as paragraph with proper styling -->
+            <p class="text-3xl md:text-4xl font-bold mb-8 leading-relaxed">
+                <span class="text-white">نحن نزيد مبيعاتك، نقلل خسائرك، ونبرز</span><br>
+                <span class="text-black text-4xl md:text-5xl font-black">علامتك التجارية</span>
+            </p>
+
+
+            <!-- Call to Action Buttons -->
+            <div class="flex flex-wrap justify-center gap-6 mb-12">
+                <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
+                   class="inline-flex items-center gap-3 bg-white text-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition shadow-2xl hover:scale-105">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    {{ $settings['company_phone'] ?? '٠٥٠٠٩٢٨٦٨٦' }}
+                </a>
+                <a href="#contact"
+                   class="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 rounded-2xl text-2xl font-black hover:bg-white hover:text-red-600 transition">
+                    تواصل معنا
+                </a>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-24 h-1 bg-red-600 mx-auto mt-8"></div>
+
+            <!-- Tagline -->
+            <p class="text-gray-400 text-lg mt-6">ناشط - شراكة تبدأ بالنجاح</p>
+        </div>
+    </div>
+
+    <!-- Scroll to top button -->
+    <div class="absolute bottom-8 right-8 z-10">
+        <a href="#home" class="bg-red-600 hover:bg-red-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition shadow-lg">
+            <svg class="w-6 h-6 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </a>
+    </div>
+</section>
+<!-- ===== FOOTER / CONTACT ===== -->
+<section id="contact" class="py-20 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <!-- Brand -->
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center font-black text-2xl">ن</div>
+                    <div>
+                        <div class="text-2xl font-black">{{ $settings['company_name_ar'] ?? 'ناشط' }}</div>
+                        <div class="text-sm text-white-500">مجموعة ناشط الاستثمارية</div>
+                    </div>
+                </div>
+                <p class="text-white-400 leading-relaxed max-w-md">
+                    شراكة رائدة في تطوير الأعمال بالمملكة العربية السعودية والشرق الأوسط،
+                    نقدم حلولاً متكاملة لتطوير أعمالكم وزيادة مبيعاتكم.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold text-white text-lg mb-6">روابط سريعة</h4>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="text-white-400 hover:text-red-500 transition">الرئيسية</a></li>
+                    <li><a href="#section2" class="text-white-400 hover:text-red-500 transition">من نحن</a></li>
+                    <li><a href="#section3" class="text-white-400 hover:text-red-500 transition">خدماتنا</a></li>
+                    <li><a href="#section11" class="text-white-400 hover:text-red-500 transition">لماذا نحن</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="font-bold text-white text-lg mb-6">تواصل معنا</h4>
+                <div class="space-y-4">
+                    <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
+                       class="flex items-center gap-3 text-white-400 hover:text-red-500 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        {{ $settings['company_phone'] ?? '٠٥٠٠٩٢٨٦٨٦' }}
+                    </a>
+                    <p class="flex items-center gap-3 text-white-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        المملكة العربية السعودية
+                    </p>
+                    <p class="text-white-500 text-sm">
+                        تأسست عام {{ $settings['company_founded_year'] ?? '١٩٩٠' }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-white-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white-600 text-sm">
+                &copy; {{ date('Y') }} {{ $settings['company_name_ar'] ?? 'ناشط' }}. جميع الحقوق محفوظة.
+            </p>
+            @auth
+                <a href="{{ route('admin.dashboard') }}" class="text-white-600 hover:text-red-500 transition text-sm">لوحة التحكم</a>
+            @else
+                <a href="{{ route('login') }}" class="text-white-600 hover:text-red-500 transition text-sm">تسجيل دخول المشرف</a>
+            @endauth
+        </div>
+    </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) navbar.classList.add('navbar-scroll');
-            else navbar.classList.remove('navbar-scroll');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.remove('open');
+                }
+            });
         });
 
         // Counter animation
         function animateCounter(el) {
             const target = parseInt(el.dataset.target);
-            const duration = 2000;
-            const step = target / (duration / 16);
+            if (!target) return;
             let current = 0;
+            const increment = target / 50;
             const timer = setInterval(() => {
-                current += step;
-                if (current >= target) { current = target; clearInterval(timer); }
-                el.textContent = Math.floor(current) + (el.dataset.suffix || '+');
-            }, 16);
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target + (el.dataset.suffix || '+');
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(current) + (el.dataset.suffix || '+');
+                }
+            }, 20);
         }
 
-        // Intersection observer for counters
+        // Intersection Observer for counters
         const counters = document.querySelectorAll('.counter');
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); observer.unobserve(e.target); } });
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
         }, { threshold: 0.5 });
-        counters.forEach(c => observer.observe(c));
-    </script>
 
+        counters.forEach(counter => observer.observe(counter));
+    </script>
 </body>
 </html>
