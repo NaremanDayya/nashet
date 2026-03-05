@@ -349,14 +349,14 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
 
 
@@ -458,14 +458,14 @@
     </div>
 
     <!-- Scroll Indicator (optional - you can keep or remove) -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
 
 <!-- ===== SECTION 4 - BRAND AMBASSADOR ===== -->
@@ -554,14 +554,14 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
 
 <!-- ===== SECTION 5 - ADVERTISING MATERIALS ===== -->
@@ -652,14 +652,14 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
 <!-- ===== SECTION 6 - LABOR RENTAL ===== -->
 <!-- ===== SECTION 6 - VEHICLE RENTAL ===== -->
@@ -739,18 +739,16 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
-<!-- ===== SECTION 7 - FIELD AUDITING ===== -->
-<!-- ===== SECTION 7 - LABOR RENTAL ===== -->
-<!-- ===== SECTION 7 - LABOR RENTAL ===== -->
+
 <!-- ===== SECTION 7 - LABOR RENTAL ===== -->
 <section id="section7" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section7.png') }}');">
     <!-- Logo in top right corner -->
@@ -761,262 +759,279 @@
     <div class="section-content">
         <div class="max-w-5xl mx-auto" data-aos="fade-up">
 
-            <!-- Main Title -->
-            <h2 class="text-5xl md:text-6xl font-black text-white leading-tight mb-2">تأجير عمالة</h2>
-            <p class="text-xl text-gray-300 mb-6">شاملة جميع القطاعات الصناعية والتجارية</p>
+                        <!-- Main Title - Raised to top space -->
+                        <div class="relative z-10 max-w-3xl pt-0 mt-0">
+                            <h2 class="text-4xl md:text-6xl font-black text-white leading-tight mb-1">تأجير عمالة</h2>
+                            <p class="text-lg md:text-xl text-red-500 font-bold mb-3">شاملة جميع القطاعات الصناعية والتجارية</p>
 
-            <!-- Red accent line -->
-            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+                            <!-- Red accent line - smaller -->
+                            <div class="w-16 h-1 bg-red-600 mb-4"></div>
+                        </div>
 
-            <!-- Two Column Layout - Exactly as in screenshot -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Right Column - شامل (Included) -->
-                <div>
-                    <h3 class="text-3xl font-bold text-white mb-6">شامل</h3>
-                    <ul class="space-y-4">
-                        <li class="text-xl text-gray-200">اشعار اجير</li>
-                        <li class="text-xl text-gray-200">نطاق معفي</li>
-                        <li class="text-xl text-gray-200">ساعات عمل</li>
-                        <li class="text-xl text-gray-200">١٠ ساعات عمل</li>
-                    </ul>
-                </div>
+                        <!-- Two Column Layout - positioned lower -->
+                        <div class="grid md:grid-cols-2 gap-12 mt-24 md:mt-32">
+                            <!-- Right Column - شامل -->
+                            <div class="text-center">
+                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">شامل</h3>
 
-                <!-- Left Column - غير شامل (Not Included) -->
-                <div>
-                    <h3 class="text-3xl font-bold text-white mb-6">غير شامل</h3>
-                    <ul class="space-y-4">
-                        <li class="text-xl text-gray-200">اشعار اجير</li>
-                        <li class="text-xl text-gray-200">نطاق معفي</li>
-                        <li class="text-xl text-gray-200">تأمين طبي</li>
-                        <li class="text-xl text-gray-200">ملابس موحدة</li>
-                        <li class="text-xl text-gray-200">هاتف ذكي</li>
-                    </ul>
-                </div>
-            </div>
+                                <!-- Icons with + -->
+                                <div class="flex items-center justify-center gap-2 mb-6">
+                                    <img src="{{ asset('assets/img/sec7.3-grey-home-icon.png') }}" alt="Home" class="w-7 h-7">
+                                    <span class="text-red-600 text-lg font-bold">+</span>
+                                    <img src="{{ asset('assets/img/sec7.4-grey-car-icon.png') }}" alt="Car" class="w-7 h-7">
+                                    <span class="text-red-600 text-lg font-bold">+</span>
+                                    <img src="{{ asset('assets/img/sec7.5-grey-food-icon.png') }}" alt="Food" class="w-7 h-7">
+                                </div>
 
-            <!-- Icons Section - From your assets -->
-            <div class="grid grid-cols-6 gap-2 mt-10 max-w-3xl mx-auto">
-                <!-- Grey Icons -->
-                <div class="flex flex-col items-center">
-                    <img src="{{ asset('assets/img/sec7.3-grey-home-icon.png') }}" alt="Home" class="w-8 h-8 opacity-70">
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="{{ asset('assets/img/sec7.4-grey-car-icon.png') }}" alt="Car" class="w-8 h-8 opacity-70">
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="{{ asset('assets/img/sec7.5-grey-food-icon.png') }}" alt="Food" class="w-8 h-8 opacity-70">
-                </div>
+                                <!-- Items List -->
+                                <ul class="space-y-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                        <span>١٠ ساعات عمل</span>
+                                        <span class="text-red-500 text-sm">🔻</span>
+                                    </li>
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                        <span>نطاق معفي</span>
+                                        <span class="text-red-500 text-sm">🔻</span>
+                                    </li>
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                        <span>تأمين طبي</span>
+                                        <span class="text-red-500 text-sm">🔻</span>
+                                    </li>
+                                </ul>
+                            </div>
 
-                <!-- White Icons -->
-                <div class="flex flex-col items-center">
-                    <img src="{{ asset('assets/img/sec7.6-white-home-icon.png') }}" alt="Home" class="w-8 h-8">
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="{{ asset('assets/img/sec7.7-white-car-icon.png') }}" alt="Car" class="w-8 h-8">
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="{{ asset('assets/img/sec7.8-white-food-icon.png') }}" alt="Food" class="w-8 h-8">
-                </div>
-            </div>
+                            <!-- Left Column - غير شامل -->
+                            <div class="text-center">
+                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">غير شامل</h3>
 
-            <!-- Additional service text -->
-            <div class="mt-8 text-center">
-                <p class="text-gray-400 text-sm">
-                    خدمة الإدارة التشغيلية المتكاملة شاملة تطبيق ناشط الرقمي متاحة عند الطلب
-                </p>
-            </div>
+                                <!-- Icons with + -->
+                                <div class="flex items-center justify-center gap-2 mb-6">
+                                    <img src="{{ asset('assets/img/sec7.6-white-home-icon.png') }}" alt="Home" class="w-7 h-7">
+                                    <span class="text-red-600 text-lg font-bold">+</span>
+                                    <img src="{{ asset('assets/img/sec7.7-white-car-icon.png') }}" alt="Car" class="w-7 h-7">
+                                    <span class="text-red-600 text-lg font-bold">+</span>
+                                    <img src="{{ asset('assets/img/sec7.8-white-food-icon.png') }}" alt="Food" class="w-7 h-7">
+                                </div>
+
+                                <!-- Items List -->
+                                <ul class="space-y-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                        <span>هاتف ذكي</span>
+                                        <span class="text-red-500 text-sm">🔺</span>
+                                    </li>
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                        <span>اشعار اجير</span>
+                                        <span class="text-red-500 text-sm">🔺</span>
+                                    </li>
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                        <span>ملابس موحدة</span>
+                                        <span class="text-red-500 text-sm">🔺</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
             <!-- Bottom red accent line -->
             <div class="w-24 h-1 bg-red-600 mt-10 mx-auto"></div>
         </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-gray-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <!-- Scroll Indicator -->--}}
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-gray-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
+<!-- ===== SECTION 8 - SALES REPRESENTATIVE RENTAL ===== -->
 <section id="section8" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section8.png') }}');">
-    <!-- Logo in top right corner -->
-    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
-
-    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
-
-    <div class="section-content">
-        <div class="max-w-5xl mx-auto" data-aos="fade-up">
-            <!-- Main Title -->
-            <h2 class="text-5xl md:text-6xl font-black text-white leading-tight mb-10">تأجير مندوب مبيعات</h2>
-
-            <!-- Features Grid - 3x2 layout as in screenshot -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl">
-                <!-- Row 1 -->
-                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
-                    <div class="text-4xl font-black text-red-600 mb-2">10</div>
-                    <div class="text-2xl font-bold text-white mb-1">أسعار</div>
-                    <div class="text-lg text-white-400">عمل</div>
-                </div>
-
-                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
-                    <div class="text-3xl font-black text-red-600 mb-2">⭕</div>
-                    <div class="text-2xl font-bold text-white mb-1">نطاق</div>
-                    <div class="text-lg text-white-400">معفي</div>
-                    <div class="text-sm text-red-500 mt-1">Nitqat</div>
-                </div>
-
-                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
-                    <div class="text-3xl font-black text-red-600 mb-2">📱</div>
-                    <div class="text-2xl font-bold text-white mb-1">هاتف</div>
-                    <div class="text-lg text-white-400">ذكي</div>
-                </div>
-
-                <!-- Row 2 -->
-                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
-                    <div class="text-3xl font-black text-red-600 mb-2">📋</div>
-                    <div class="text-2xl font-bold text-white mb-1">اشعار</div>
-                    <div class="text-lg text-white-400">أجير</div>
-                </div>
-
-                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
-                    <div class="text-3xl font-black text-red-600 mb-2">🏥</div>
-                    <div class="text-2xl font-bold text-white mb-1">تأمين</div>
-                    <div class="text-lg text-white-400">طبي</div>
-                </div>
-
-                <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-6 text-center transform hover:scale-105 transition">
-                    <div class="text-3xl font-black text-red-600 mb-2">👕</div>
-                    <div class="text-2xl font-bold text-white mb-1">ملابس</div>
-                    <div class="text-lg text-white-400">موحدة</div>
-                </div>
-            </div>
-
-            <!-- Additional Features Row (optional based on screenshot) -->
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <span class="bg-red-600/20 border border-red-600/30 rounded-full px-4 py-2 text-sm text-white-300">
-                    دوام كامل
-                </span>
-                <span class="bg-red-600/20 border border-red-600/30 rounded-full px-4 py-2 text-sm text-white-300">
-                    تدريب مسبق
-                </span>
-                <span class="bg-red-600/20 border border-red-600/30 rounded-full px-4 py-2 text-sm text-white-300">
-                    متابعة أداء
-                </span>
-            </div>
-
-            <!-- Bottom red accent line -->
-            <div class="w-24 h-1 bg-red-600 mt-12"></div>
-        </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ===== SECTION 9 - DRIVER RENTAL ===== -->
-<section id="section9" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section9.png') }}');">
     <!-- Logo in top right corner -->
     <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
 
     <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);"></div>
 
     <div class="section-content">
-        <div class="max-w-6xl mx-auto" data-aos="fade-up">
-            <!-- Main Title - moved up to make room for cards under face -->
-            <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-1">تأجير سائق مركبة نقل</h2>
-            <p class="text-lg text-gray-300 mb-4">لجميع أحجام المركبات و جميع أنواع الرخص</p>
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
 
-            <!-- Red accent line - shorter -->
-            <div class="w-20 h-1 bg-red-600 mb-6"></div>
+            <!-- Main Title - Raised up -->
+            <div class="relative z-10 max-w-3xl pt-0 mt-0">
+                <h2 class="text-4xl md:text-6xl font-black text-white leading-tight mb-1">تأجير مندوب مبيعات</h2>
 
-            <!-- Three Cards in One Line - Compact version -->
-            <div class="grid grid-cols-3 gap-3 max-w-3xl">
-                <!-- Card 1: نقل خفيف -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-2 px-3 flex flex-col items-center text-center">
-                    <div class="text-red-600 font-black text-sm">نقل</div>
-                    <div class="text-white font-black text-base">خفيف</div>
-                    <div class="text-xs text-gray-300 mt-1">رخصة خاصة</div>
+                <!-- Red accent line - smaller -->
+                <div class="w-16 h-1 bg-red-600 mb-6"></div>
+            </div>
+
+            <!-- Features Grid - 2x3 layout with icons from assets -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 max-w-4xl mx-auto">
+                <!-- Card 1: نطاق معفي / Nitqat -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec8.3-nitaqat.png') }}" alt="Nitaqat" class="w-20 h-10 mx-auto mb-2">
+                    <div class="text-lg font-bold text-white">نطاق معفي</div>
+                    <div class="text-xs text-red-500 mt-1">Nitqat</div>
                 </div>
 
-                <!-- Card 2: نقل متوسط -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-2 px-3 flex flex-col items-center text-center">
+                <!-- Card 2: أسعار عمل / 10 ساعات -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec8.4-10work-hours.png') }}" alt="10 Hours" class="w-12 h-12 mx-auto mb-2">
+                    <div class="text-lg font-bold text-white">أسعار عمل</div>
+                    <div class="text-sm text-gray-400">١٠ ساعات</div>
+                </div>
+
+                <!-- Card 3: هاتف ذكي -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec8.5-phone.png') }}" alt="Phone" class="w-12 h-12 mx-auto mb-2">
+                    <div class="text-lg font-bold text-white">هاتف ذكي</div>
+                </div>
+
+                <!-- Card 4: أشعار أجير -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec8.2-ageer.png') }}" alt="Ageer" class="w-12 h-12 mx-auto mb-2">
+                    <div class="text-lg font-bold text-white">أشعار أجير</div>
+                </div>
+
+                <!-- Card 5: تأمين طبي -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec8.6-health-gurantee.png') }}" alt="Health Insurance" class="w-12 h-12 mx-auto mb-2">
+                    <div class="text-lg font-bold text-white">تأمين طبي</div>
+                </div>
+
+                <!-- Card 6: ملابس موحدة -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
+                    <img src="{{ asset('assets/img/sec8.7-united-uniform.png') }}" alt="Uniform" class="w-12 h-12 mx-auto mb-2">
+                    <div class="text-lg font-bold text-white">ملابس موحدة</div>
+                </div>
+            </div>
+
+            <!-- Additional Features Row - as in screenshot -->
+            <div class="grid grid-cols-3 gap-3 mt-8 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="text-white font-bold text-base">تزويد مسوق</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-white font-bold text-base">دعم كامل</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-white font-bold text-base">متابعة أداء</div>
+                </div>
+            </div>
+
+            <!-- Bottom red accent line -->
+            <div class="w-16 h-1 bg-red-600 mt-10 mx-auto"></div>
+
+            <!-- Small tagline -->
+            <p class="text-gray-500 text-xs text-center mt-4">خدمة متكاملة مع تطبيق ناشط الرقمي</p>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator - smaller -->
+{{--    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-1">--}}
+{{--            <span class="text-gray-400 text-xs">اكتشف المزيد</span>--}}
+{{--            <div class="w-5 h-8 border border-gray-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-0.5 h-1.5 bg-red-500 rounded-full mt-1 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+</section>
+
+<!-- ===== SECTION 9 - DRIVER RENTAL ===== -->
+<!-- ===== SECTION 9 - DRIVER RENTAL ===== -->
+<section id="section9" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section9.png') }}');">
+    <!-- Logo in top right corner -->
+    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
+
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);"></div>
+
+    <div class="section-content">
+        <div class="max-w-6xl mx-auto" data-aos="fade-up">
+
+            <!-- Main Title - moved up -->
+            <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-1">تأجير سائق مركبة نقل</h2>
+            <p class="text-base md:text-lg text-gray-300 mb-3">لجميع أحجام المركبات و جميع أنواع الرخص</p>
+
+            <!-- Red accent line - shorter -->
+            <div class="w-16 h-1 bg-red-600 mb-5"></div>
+            <div class="h-18"></div>
+
+            <!-- Three Cards in One Line - with icons -->
+            <div class="grid grid-cols-2 gap-3 max-w-3xl">
+                <!-- Card 1: نقل ثقيل (Heavy Transport) -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-3 px-2 flex flex-col items-center text-center">
+                    <img src="{{ asset('assets/img/sec9.2-heavy-transport.png') }}" alt="Heavy Transport" class="w-10 h-10 mb-1">
+                    <div class="text-red-600 font-black text-sm">نقل</div>
+                    <div class="text-white font-black text-base">ثقيل</div>
+                    <div class="text-xs text-gray-300 mt-1">رخصة عمومي</div>
+                </div>
+
+                <!-- Card 2: نقل متوسط (Medium Transport) -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-3 px-2 flex flex-col items-center text-center">
+                    <img src="{{ asset('assets/img/sec9.2-medium-transport.png') }}" alt="Medium Transport" class="w-10 h-10 mb-1">
                     <div class="text-red-600 font-black text-sm">نقل</div>
                     <div class="text-white font-black text-base">متوسط</div>
                     <div class="text-xs text-gray-300 mt-1">رخصة مهنية</div>
                 </div>
 
-                <!-- Card 3: نقل ثقيل -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-2 px-3 flex flex-col items-center text-center">
-                    <div class="text-red-600 font-black text-sm">نقل</div>
-                    <div class="text-white font-black text-base">ثقيل</div>
-                    <div class="text-xs text-gray-300 mt-1">رخصة عمومي</div>
-                </div>
+
             </div>
 
-            <!-- Bottom Features - Three cards in one line as shown in screenshot -->
-            <div class="grid grid-cols-3 gap-3 mt-4 max-w-3xl">
-                <!-- تأمين صحي -->
+
+
+            <!-- Bottom Features - 6 items in a 3x2 grid as in screenshot -->
+            <div class="grid grid-cols-3 gap-2 mt-6 max-w-4xl">
+                <!-- تأمين طبي -->
                 <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
-                    <span class="text-red-500 text-lg">🏥</span>
-                    <div>
-                        <div class="text-white text-xs font-bold">تأمين صحي</div>
-                        <div class="text-[10px] text-gray-400">شامل</div>
-                    </div>
+                    <img src="{{ asset('assets/img/sec8.6-health-gurantee.png') }}" alt="Health" class="w-6 h-6">
+                    <span class="text-white text-xs font-bold">تأمين طبي</span>
                 </div>
 
-                <!-- 10 ساعات عمل -->
+                <!-- هاتف ذكي -->
                 <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
-                    <span class="text-red-500 text-lg">⏰</span>
+                    <img src="{{ asset('assets/img/sec8.5-phone.png') }}" alt="Phone" class="w-6 h-6">
+                    <span class="text-white text-xs font-bold">هاتف ذكي</span>
+                </div>
+
+                <!-- Nitaqat -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
+                    <img src="{{ asset('assets/img/sec8.3-nitaqat.png') }}" alt="Nitaqat" class="w-10 h-6">
                     <div>
-                        <div class="text-white text-xs font-bold">10 ساعات عمل</div>
-                        <div class="text-[10px] text-gray-400">يومياً</div>
+                        <span class="text-white text-xs font-bold">Nitaqat</span>
                     </div>
                 </div>
 
                 <!-- ملابس موحدة -->
                 <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
-                    <span class="text-red-500 text-lg">👕</span>
-                    <div>
-                        <div class="text-white text-xs font-bold">ملابس موحدة</div>
-                        <div class="text-[10px] text-red-500">Nitaqat</div>
-                    </div>
+                    <img src="{{ asset('assets/img/sec8.7-united-uniform.png') }}" alt="Uniform" class="w-6 h-6">
+                    <span class="text-white text-xs font-bold">ملابس موحدة</span>
+                </div>
+
+                <!-- إشعار أجير -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
+                    <img src="{{ asset('assets/img/sec8.2-ageer.png') }}" alt="Ageer" class="w-6 h-6">
+                    <span class="text-white text-xs font-bold">إشعار أجير</span>
+                </div>
+
+                <!-- 10 ساعات عمل -->
+                <div class="bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-lg py-2 px-2 flex items-center gap-2">
+                    <img src="{{ asset('assets/img/sec8.4-10work-hours.png') }}" alt="10 Hours" class="w-6 h-6">
+                    <span class="text-white text-xs font-bold">١٠ ساعات عمل</span>
                 </div>
             </div>
 
-            <!-- Additional service text - smaller -->
-            <div class="mt-4 text-right">
+            <!-- Additional service text -->
+            <div class="mt-4 text-center">
                 <p class="text-gray-400 text-xs">
                     خدمة الإدارة التشغيلية المتكاملة شاملة تطبيق ناشط الرقمي متاحة عند الطلب
                 </p>
             </div>
 
             <!-- Bottom red accent line -->
-            <div class="w-20 h-1 bg-red-600 mt-4"></div>
+            <div class="w-16 h-1 bg-red-600 mt-4 mx-auto"></div>
         </div>
     </div>
-
-    <!-- Scroll Indicator - smaller -->
-    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-1">
-            <span class="text-gray-400 text-xs">اكتشف المزيد</span>
-            <div class="w-5 h-8 border border-gray-400 rounded-full flex justify-center">
-                <div class="w-0.5 h-1.5 bg-red-500 rounded-full mt-1 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
-</section><!-- ===== SECTION 10 - LEGAL INCUBATION DETAILS ===== -->
-<section id="section10" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section10.png') }}');">
+</section><section id="section10" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section10.png') }}');">
     <!-- Logo in top right corner -->
     <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
 
@@ -1137,14 +1152,14 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
 
 <!-- ===== SECTION 11 - WHY US & COMPANY OVERVIEW ===== -->
@@ -1298,14 +1313,14 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-white-400 text-sm">اكتشف المزيد</span>
-            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
+{{--        <div class="flex flex-col items-center gap-2">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
+{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
 <!-- ===== SECTION 12 - CTA ===== -->
 <!-- ===== SECTION 12 - FINAL CTA ===== -->
