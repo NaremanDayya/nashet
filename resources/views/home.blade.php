@@ -310,7 +310,8 @@
             <div class="grid grid-cols-2 gap-x-8 gap-y-4 mt-12">
                 <!-- Row 1 -->
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl font-black text-red-500 min-w-[40px]">8</span>
+{{--                    <span class="text-3xl font-black text-red-500 min-w-[40px]">8</span>--}}
+                    <img src="{{ asset('assets/img/sec2.8-clock.png') }}" alt="Car" class="w-10 h-10">
                     <span class="text-xl text-white">ساعات عمل</span>
                 </div>
                 <div class="flex items-center gap-3">
@@ -334,16 +335,7 @@
                     <span class="text-xl text-white">شهادة تدريب</span>
                 </div>
                 <div class="flex items-center gap-3">
-{{--                    <span class="text-3xl font-black text-red-500 min-w-[40px]">✓</span>--}}
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="6" cy="6" r="4" fill="#E11D48"/>
-                        <path d="M4.5 6L5.5 7L7.5 5" stroke="white" stroke-width="1" stroke-linecap="round"/>
-
-                        <path d="M12 18C12 14.6863 14.6863 12 18 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M12 22C12 18.6863 18.6863 12 22 12" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-
-                        <circle cx="18" cy="18" r="3" fill="#E11D48"/>
-                    </svg>
+                    <img src="{{ asset('assets/img/sec2.7-coverage.png') }}" alt="Certificate" class="w-15 h-20">
                     <span class="text-xl text-white">تغطية شاملة</span>
                 </div>
             </div>
@@ -592,50 +584,50 @@
             <div class="w-20 h-1 bg-red-600 mb-6"></div>
 
             <!-- Products Grid with Images - 3x3 layout as in design -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl">
-                <!-- الروان -اب -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
-                    <img src="{{ asset('assets/img/sec5.1-material1.png') }}" alt="الروان -اب" class="w-16 h-16 mx-auto mb-2">
-                    <span class="text-white font-bold text-sm">الأعلام التجارية</span>
+            <!-- Products Grid with Images - 7 items in one row on desktop with taller boxes -->
+            <div class="grid grid-cols-2 md:grid-cols-7 gap-3 md:gap-4 max-w-7xl mx-auto">
+                <!-- الأعلام التجارية -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 md:p-4 text-center flex flex-col items-center justify-between min-h-[160px] md:min-h-[180px]">
+                    <img src="{{ asset('assets/img/sec5.1-material1.png') }}" alt="الأعلام التجارية" class="w-12 h-12 md:w-14 md:h-14 mt-2 mb-3">
+                    <span class="text-white font-bold text-sm md:text-base pb-2 whitespace-nowrap">الأعلام التجارية</span>
                 </div>
 
-                <!-- المطبوعات -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
-                    <img src="{{ asset('assets/img/sec5.2-material2.png') }}" alt="المطبوعات" class="w-16 h-16 mx-auto mb-2">
-                    <span class="text-white font-bold text-sm">الستاندات</span>
+                <!-- الستاندات -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 md:p-4 text-center flex flex-col items-center justify-between min-h-[160px] md:min-h-[180px]">
+                    <img src="{{ asset('assets/img/sec5.2-material2.png') }}" alt="الستاندات" class="w-12 h-12 md:w-14 md:h-14 mt-2 mb-3">
+                    <span class="text-white font-bold text-sm md:text-base pb-2 whitespace-nowrap">الستاندات</span>
                 </div>
 
-                <!-- الشاشة الرقمية -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
-                    <img src="{{ asset('assets/img/sec5.3-material3.png') }}" alt="الشاشة الرقمية" class="w-16 h-16 mx-auto mb-2">
-                    <span class="text-white font-bold text-sm">الملابس الموحدة</span>
+                <!-- الملابس الموحدة -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 md:p-4 text-center flex flex-col items-center justify-between min-h-[160px] md:min-h-[180px]">
+                    <img src="{{ asset('assets/img/sec5.3-material3.png') }}" alt="الملابس الموحدة" class="w-12 h-12 md:w-14 md:h-14 mt-2 mb-3">
+                    <span class="text-white font-bold text-sm md:text-base pb-2 whitespace-nowrap">الملابس الموحدة</span>
                 </div>
 
                 <!-- طاولة العرض -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
-                    <img src="{{ asset('assets/img/sec5.4-material4.png') }}" alt="طاولة العرض" class="w-16 h-16 mx-auto mb-2">
-                    <span class="text-white font-bold text-sm">طاولة العرض</span>
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 md:p-4 text-center flex flex-col items-center justify-between min-h-[160px] md:min-h-[180px]">
+                    <img src="{{ asset('assets/img/sec5.4-material4.png') }}" alt="طاولة العرض" class="w-12 h-12 md:w-14 md:h-14 mt-2 mb-3">
+                    <span class="text-white font-bold text-sm md:text-base pb-2 whitespace-nowrap">طاولة العرض</span>
                 </div>
 
-                <!-- المقاسين الموصدة -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
-                    <img src="{{ asset('assets/img/sec5.5-material5.png') }}" alt="المقاسين الموصدة" class="w-16 h-16 mx-auto mb-2">
-                    <span class="text-white font-bold text-sm">الشنطة الرقمية</span>
+                <!-- الشنطة الرقمية -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 md:p-4 text-center flex flex-col items-center justify-between min-h-[160px] md:min-h-[180px]">
+                    <img src="{{ asset('assets/img/sec5.5-material5.png') }}" alt="الشنطة الرقمية" class="w-12 h-12 md:w-14 md:h-14 mt-2 mb-3">
+                    <span class="text-white font-bold text-sm md:text-base pb-2 whitespace-nowrap">الشنطة الرقمية</span>
                 </div>
 
-                <!-- البنتانات -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
-                    <img src="{{ asset('assets/img/sec5.6-material6.png') }}" alt="البنتانات" class="w-16 h-16 mx-auto mb-2">
-                    <span class="text-white font-bold text-sm">المطبوعات</span>
+                <!-- المطبوعات -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 md:p-4 text-center flex flex-col items-center justify-between min-h-[160px] md:min-h-[180px]">
+                    <img src="{{ asset('assets/img/sec5.6-material6.png') }}" alt="المطبوعات" class="w-12 h-12 md:w-14 md:h-14 mt-2 mb-3">
+                    <span class="text-white font-bold text-sm md:text-base pb-2 whitespace-nowrap">المطبوعات</span>
                 </div>
 
-                <!-- الأعمال التجارية -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center md:col-start-2">
-                    <img src="{{ asset('assets/img/sec5.7-material7.png') }}" alt="الأعمال التجارية" class="w-16 h-16 mx-auto mb-2">
-                    <span class="text-white font-bold text-sm">الرول-اب</span>
+                <!-- الرول-اب -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 md:p-4 text-center flex flex-col items-center justify-between min-h-[160px] md:min-h-[180px]">
+                    <img src="{{ asset('assets/img/sec5.7-material7.png') }}" alt="الرول-اب" class="w-12 h-12 md:w-14 md:h-14 mt-2 mb-3">
+                    <span class="text-white font-bold text-sm md:text-base pb-2 whitespace-nowrap">الرول-اب</span>
                 </div>
             </div>
-
             <!-- Additional Features/Services -->
             <div class="mt-12 grid md:grid-cols-3 gap-4">
                 <div class="bg-red-600/10 border border-red-600/20 rounded-xl p-4 text-center">
@@ -858,15 +850,15 @@
 
                     <!-- Items List - شامل -->
                     <ul class="space-y-3 flex flex-col items-end">
-                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                        <li class="text-lg md:text-xl text-white-200 flex items-center gap-3">
                             <span>ساعات عمل</span>
                             <span class="text-red-500 text-base w-6 text-center">🔻</span>
                         </li>
-                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                        <li class="text-lg md:text-xl text-white-200 flex items-center gap-3">
                             <span>نطاق معفي</span>
                             <span class="text-red-500 text-base w-6 text-center">🔻</span>
                         </li>
-                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                        <li class="text-lg md:text-xl text-white-200 flex items-center gap-3">
                             <span>تأمين طبي</span>
                             <span class="text-red-500 text-base w-6 text-center">🔻</span>
                         </li>
@@ -888,15 +880,15 @@
 
                     <!-- Items List - غير شامل -->
                     <ul class="space-y-3 flex flex-col items-start">
-                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                        <li class="text-lg md:text-xl text-white-200 flex items-center gap-3">
                             <span class="text-red-500 text-base w-6 text-center">🔺</span>
                             <span>هاتف ذكي</span>
                         </li>
-                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                        <li class="text-lg md:text-xl text-white-200 flex items-center gap-3">
                             <span class="text-red-500 text-base w-6 text-center">🔺</span>
                             <span>اشعار اجير</span>
                         </li>
-                        <li class="text-lg md:text-xl text-gray-200 flex items-center gap-3">
+                        <li class="text-lg md:text-xl text-white-200 flex items-center gap-3">
                             <span class="text-red-500 text-base w-6 text-center">🔺</span>
                             <span>ملابس موحدة</span>
                         </li>
@@ -912,8 +904,8 @@
 {{--    <!-- Scroll Indicator -->--}}
 {{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
 {{--        <div class="flex flex-col items-center gap-2">--}}
-{{--            <span class="text-gray-400 text-sm">اكتشف المزيد</span>--}}
-{{--            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">--}}
+{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
+{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
 {{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
@@ -950,7 +942,7 @@
                 <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
                     <img src="{{ asset('assets/img/sec8.4-10work-hours.png') }}" alt="10 Hours" class="w-12 h-12 mx-auto mb-2">
                     <div class="text-lg font-bold text-white">ساعات  عمل</div>
-                    <div class="text-sm text-gray-400">١٠ ساعات</div>
+                    <div class="text-sm text-white-400">١٠ ساعات</div>
                 </div>
 
                 <!-- Card 3: هاتف ذكي -->
@@ -995,15 +987,15 @@
             <div class="w-16 h-1 bg-red-600 mt-10 mx-auto"></div>
 
             <!-- Small tagline -->
-            <p class="text-gray-500 text-xs text-center mt-4">خدمة متكاملة مع تطبيق ناشط الرقمي</p>
+            <p class="text-white-500 text-xs text-center mt-4">خدمة متكاملة مع تطبيق ناشط الرقمي</p>
         </div>
     </div>
 
     <!-- Scroll Indicator - smaller -->
 {{--    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">--}}
 {{--        <div class="flex flex-col items-center gap-1">--}}
-{{--            <span class="text-gray-400 text-xs">اكتشف المزيد</span>--}}
-{{--            <div class="w-5 h-8 border border-gray-400 rounded-full flex justify-center">--}}
+{{--            <span class="text-white-400 text-xs">اكتشف المزيد</span>--}}
+{{--            <div class="w-5 h-8 border border-white-400 rounded-full flex justify-center">--}}
 {{--                <div class="w-0.5 h-1.5 bg-red-500 rounded-full mt-1 animate-bounce"></div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
@@ -1023,7 +1015,7 @@
 
             <!-- Main Title - moved up -->
             <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-1">تأجير سائق مركبة نقل</h2>
-            <p class="text-base md:text-lg text-gray-300 mb-3">لجميع أحجام المركبات و جميع أنواع الرخص</p>
+            <p class="text-base md:text-lg text-white-300 mb-3">لجميع أحجام المركبات و جميع أنواع الرخص</p>
 
             <!-- Red accent line - shorter -->
             <div class="w-16 h-1 bg-red-600 mb-5"></div>
@@ -1036,7 +1028,7 @@
                     <img src="{{ asset('assets/img/sec9.2-heavy-transport.png') }}" alt="Heavy Transport" class="w-10 h-10 mb-1">
                     <div class="text-red-600 font-black text-sm">نقل</div>
                     <div class="text-white font-black text-base">ثقيل</div>
-                    <div class="text-xs text-gray-300 mt-1">رخصة عمومي</div>
+                    <div class="text-xs text-white-300 mt-1">رخصة عمومي</div>
                 </div>
 
                 <!-- Card 2: نقل متوسط (Medium Transport) -->
@@ -1044,7 +1036,7 @@
                     <img src="{{ asset('assets/img/sec9.2-medium-transport.png') }}" alt="Medium Transport" class="w-10 h-10 mb-1">
                     <div class="text-red-600 font-black text-sm">نقل</div>
                     <div class="text-white font-black text-base">متوسط</div>
-                    <div class="text-xs text-gray-300 mt-1">رخصة مهنية</div>
+                    <div class="text-xs text-white-300 mt-1">رخصة مهنية</div>
                 </div>
 
 
@@ -1095,7 +1087,7 @@
 
             <!-- Additional service text -->
             <div class="mt-4 text-center">
-                <p class="text-gray-400 text-xs">
+                <p class="text-white-400 text-xs">
                     خدمة الإدارة التشغيلية المتكاملة شاملة تطبيق ناشط الرقمي متاحة عند الطلب
                 </p>
             </div>
@@ -1238,166 +1230,162 @@
 </section>
 
 <!-- ===== SECTION 11 - WHY US & COMPANY OVERVIEW ===== -->
+<!-- ===== SECTION 11 - WHY US & FEATURES ===== -->
 <section id="section11" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section11.png') }}');">
     <!-- Logo in top right corner -->
     <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
 
-    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%);"></div>
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);"></div>
 
     <div class="section-content">
         <div class="max-w-6xl mx-auto" data-aos="fade-up">
-            <!-- Header with dual branding -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-
-                <div class="text-left md:text-right mt-4 md:mt-0">
-                    <div class="text-4xl md:text-5xl font-black text-white">لماذا نحن؟</div>
-                    <p class="text-2xl text-red-600 font-bold mt-2">لأننا نصنع الفرق</p>
+            <!-- Header with Logo Text -->
+            <div class="mb-4">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="text-4xl md:text-5xl font-black text-white">NASHET</span>
                 </div>
+                <p class="text-lg text-red-600 font-bold tracking-wide">We Drive Your Strong Sales</p>
+            </div>
+
+            <!-- Why Us Title -->
+            <div class="mb-6">
+                <h2 class="text-5xl md:text-6xl font-black text-white leading-tight mb-2">لماذا نحن؟</h2>
+                <p class="text-2xl text-red-600 font-bold">لأننا نصنع الفرق</p>
             </div>
 
             <!-- Red accent line -->
-            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+            <div class="w-20 h-1 bg-red-600 mb-8"></div>
 
             <!-- Company Description -->
             <div class="mb-10 max-w-4xl">
                 <p class="text-xl text-white-300 leading-relaxed">
                     <span class="text-white font-bold">ناشط</span> تقدم حلولاً متكاملة وابتكارية في مجال توريد الموارد البشرية،
-                    المركبات، السائقين، مندوبي المبيعات، العمالة العامة، الخدمات القانونية، وتقدم بالآتي:
+                    المركبات، السائقين، مندوبي المبيعات، العمالة العامة، الخدمات القانونية، ونتميز بالآتي:
                 </p>
             </div>
 
-            <!-- Main Services Grid - 3 columns -->
-            <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <!-- Features Grid with Icons - 3 columns -->
+            <div class="grid md:grid-cols-4 gap-6 mb-10">
                 <!-- Column 1 -->
-                <div class="space-y-4">
-                    <!-- المستورد -->
+                <div class="space-y-3">
+                    <!-- جودة معايير عالية -->
                     <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
-                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                <span class="text-white-300">مقاييس مالية</span>
-                            </div>
-                            <div class="pr-4 text-white-400 text-sm">
-                                تعزيز في الخطوة الرقمية والتكنولوجيا
-                            </div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.2-icon-2.png') }}" alt="جودة" class="w-10 h-10">
+                            <h3 class="text-xl font-bold text-white">سرعة التوريد </h3>
+                        </div>
+                        <div class="space-y-1 pr-4">
+                            <div class="text-xl font-bold text-red-600">والاستجابة</div>
                         </div>
                     </div>
 
-                    <!-- المستورد (second) -->
+                    <!-- التوريد والاستجابة -->
                     <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
-                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                <span class="text-white-300">إدارة المخاطر</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                <span class="text-white-300">استراتيجية إدارة المخاطر</span>
-                            </div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.3-icon-3.png') }}" alt="التوريد" class="w-10 h-10">
+                            <h3 class="text-xl font-bold text-white">معايير جودة</h3>
+                        </div>
+                        <div class="space-y-1 pr-2">
+                            <div class="text-xl font-bold text-red-600">عالية</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Column 2 -->
-                <div class="space-y-4">
-                    <!-- المستورد (third) -->
+                <div class="space-y-3">
+                    <!-- شركة متكاملة -->
                     <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
-                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                <span class="text-white-300">إدارة المخاطر</span>
-                            </div>
-                            <div class="text-red-500 font-bold pr-4">
-                                مكافحة
-                            </div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.4-icon-4.png') }}" alt="شركة" class="w-10 h-10">
+                            <h3 class="text-xl font-bold text-white">حلول قانونية مرنة</h3>
+                        </div>
+                        <div class="space-y-1 pr-2">
+                            <div class="text-xl font-bold text-red-600">خدمة الاحتضان القانوني</div>
                         </div>
                     </div>
 
-                    <!-- المستورد (fourth) -->
+                    <!-- تطوير في الحلول الرقمية والتكنولوجيا -->
                     <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
-                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                <span class="text-white-300">إدارة المخاطر</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                <span class="text-white-300">إدارة المخاطر</span>
-                            </div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.5-icon-5.png') }}" alt="تطوير" class="w-10 h-10">
+                            <h3 class="text-xl font-bold text-white">دعم مستمر</h3>
+                        </div>
+                        <div class="space-y-1 pr-2">
+                            <div class="text-xl font-bold text-red-600">واشراف متكامل</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Column 3 -->
-                <div class="space-y-4">
-                    <!-- المستورد (fifth) -->
+                <div class="space-y-3">
+                    <!-- تعميم وإشراف متكامل -->
                     <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
-                        <h3 class="text-2xl font-bold text-white mb-3">المستورد</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                <span class="text-white-300">إدارة المخاطر</span>
-                            </div>
-                            <div class="text-red-500 font-bold">
-                                إدارة المخاطر
-                            </div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.6-icon-6.png') }}" alt="تعميم" class="w-10 h-10">
+                            <h3 class="text-xl font-bold text-white">التميز في الحلول</h3>
+                        </div>
+                        <div class="space-y-1 pr-2">
+                            <div class="text-xl font-bold text-red-600">الرقمية والتكنولوجيا</div>
                         </div>
                     </div>
 
-                    <!-- Additional feature card -->
-                    <div class="bg-red-600/20 backdrop-blur-lg border-2 border-red-600 rounded-2xl p-5">
-                        <div class="text-center">
-                            <span class="text-white font-bold text-lg">حلول متكاملة</span>
-                            <span class="text-red-500 text-sm block mt-1">لجميع احتياجاتكم</span>
+                    <!-- أسعار وقيمة -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.7-icon-7.png') }}" alt="أسعار" class="w-10 h-10">
+                            <h3 class="text-xl font-bold text-white">أسعار تنافسية</h3>
+                        </div>
+                        <div class="space-y-1 pr-2">
+                            <div class="text-xl font-bold text-red-600">وقيمة مضافة</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="space-y-3">
+                    <!-- تعميم وإشراف متكامل -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.8-icon-8.png') }}" alt="تعميم" class="w-10 h-10">
+                            <h3 class="text-xl font-bold text-white">الاستجابة السريعة</h3>
+                        </div>
+                        <div class="space-y-1 pr-2">
+                            <div class="text-xl font-bold text-red-600">ومعالجة المشاكل فورًا</div>
+                        </div>
+                    </div>
+
+                    <!-- أسعار وقيمة -->
+                    <div class="bg-black/40 backdrop-blur-lg border-2 border-red-600/30 rounded-2xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="{{ asset('assets/img/sec11.9.png') }}" alt="أسعار" class="w-10 h-15">
+                            <h3 class="text-xl font-bold text-white">خبرة تشغيلية</h3>
+                        </div>
+                        <div class="space-y-1 pr-2">
+                            <div class="text-xl font-bold text-red-600">متكاملة</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Features Grid (from original) - moved to bottom -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
-                    <div class="text-red-500 text-2xl mb-2">⚡</div>
-                    <h4 class="text-sm font-bold text-white mb-1">سرعة التوريد والاستجابة</h4>
-                    <p class="text-xs text-white-400">توريد الكوادر في أقصر وقت</p>
-                </div>
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
-                    <div class="text-red-500 text-2xl mb-2">⭐</div>
-                    <h4 class="text-sm font-bold text-white mb-1">معايير جودة عالية</h4>
-                    <p class="text-xs text-white-400">التزام بأعلى معايير الجودة</p>
-                </div>
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
-                    <div class="text-red-500 text-2xl mb-2">⚖️</div>
-                    <h4 class="text-sm font-bold text-white mb-1">حلول قانونية مرنة</h4>
-                    <p class="text-xs text-white-400">احتضان قانوني شامل</p>
-                </div>
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/20 rounded-xl p-4">
-                    <div class="text-red-500 text-2xl mb-2">💰</div>
-                    <h4 class="text-sm font-bold text-white mb-1">أسعار تنافسية</h4>
-                    <p class="text-xs text-white-400">أفضل الأسعار مع ضمان الجودة</p>
+            <!-- Bottom Feature - الاستجابة السريعة ومعالجة المشكلات فوراً -->
+            <div class="bg-red-600/20 backdrop-blur-lg border-2 border-red-600 rounded-2xl p-5 max-w-3xl mx-auto mb-8">
+                <div class="flex items-center gap-4">
+                    <img src="{{ asset('assets/img/sec11.8-icon-8.png') }}" alt="الاستجابة" class="w-12 h-12">
+                    <div>
+                        <h4 class="text-white font-bold text-lg">الاستجابة السريعة</h4>
+                        <p class="text-white-300 text-sm">ومعالجة المشكلات فوراً</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Bottom red accent line -->
-            <div class="w-24 h-1 bg-red-600 mt-10 mx-auto"></div>
+            <div class="w-16 h-1 bg-red-600 mt-6 mx-auto"></div>
+
+            <!-- Small tagline -->
+            <p class="text-white-500 text-xs text-center mt-4">ناشط - شراكة تبدأ بالنجاح</p>
         </div>
     </div>
-
-    <!-- Scroll Indicator -->
-{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
-{{--        <div class="flex flex-col items-center gap-2">--}}
-{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
-{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
-{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-</section>
-<!-- ===== SECTION 12 - CTA ===== -->
+</section><!-- ===== SECTION 12 - CTA ===== -->
 <!-- ===== SECTION 12 - FINAL CTA ===== -->
 <section id="section12" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section12.png') }}');">
     <!-- Logo in top right corner -->
@@ -1424,7 +1412,7 @@
             <!-- Call to Action Buttons -->
             <div class="flex flex-wrap justify-center gap-6 mb-12">
                 <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
-                   class="inline-flex items-center gap-3 bg-white text-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition shadow-2xl hover:scale-105">
+                   class="inline-flex items-center gap-3 bg-white text-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-white-100 transition shadow-2xl hover:scale-105">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
@@ -1440,7 +1428,7 @@
             <div class="w-24 h-1 bg-red-600 mx-auto mt-8"></div>
 
             <!-- Tagline -->
-            <p class="text-gray-400 text-lg mt-6">ناشط - شراكة تبدأ بالنجاح</p>
+            <p class="text-white-400 text-lg mt-6">ناشط - شراكة تبدأ بالنجاح</p>
         </div>
     </div>
 
