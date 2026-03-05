@@ -1366,18 +1366,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Bottom Feature - الاستجابة السريعة ومعالجة المشكلات فوراً -->
-            <div class="bg-red-600/20 backdrop-blur-lg border-2 border-red-600 rounded-2xl p-5 max-w-3xl mx-auto mb-8">
-                <div class="flex items-center gap-4">
-                    <img src="{{ asset('assets/img/sec11.8-icon-8.png') }}" alt="الاستجابة" class="w-12 h-12">
-                    <div>
-                        <h4 class="text-white font-bold text-lg">الاستجابة السريعة</h4>
-                        <p class="text-white-300 text-sm">ومعالجة المشكلات فوراً</p>
-                    </div>
-                </div>
-            </div>
-
             <!-- Bottom red accent line -->
             <div class="w-16 h-1 bg-red-600 mt-6 mx-auto"></div>
 
