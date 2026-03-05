@@ -244,9 +244,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden mt-4 rounded-2xl p-4">
             <a href="#home" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">الرئيسية</a>
-            <a href="#section2" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">من نحن</a>
             <a href="#section3" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">خدماتنا</a>
-            <a href="#section7" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">التدقيق الميداني</a>
             <a href="#section11" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">لماذا نحن</a>
             <a href="#contact" class="block py-3 px-4 text-white-300 hover:text-red-500 hover:bg-white-900 rounded-xl transition">تواصل معنا</a>
             <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}" class="block mt-2 py-3 px-4 bg-red-600 text-white rounded-xl text-center font-bold">اتصل الآن</a>
