@@ -661,94 +661,161 @@
 {{--        </div>--}}
 {{--    </div>--}}
 </section>
-<!-- ===== SECTION 6 - LABOR RENTAL ===== -->
+
+<!-- ===== SECTION 6 - VEHICLE RENTAL ===== -->
 <!-- ===== SECTION 6 - VEHICLE RENTAL ===== -->
 <section id="section6" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section6.png') }}');">
     <!-- Logo in top right corner -->
     <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
 
-    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);"></div>
+    <div class="section-overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);"></div>
 
     <div class="section-content">
         <div class="max-w-5xl mx-auto" data-aos="fade-up">
             <!-- Header -->
-            <div class="mb-8">
-                <h2 class="text-6xl md:text-7xl font-black text-white leading-tight mb-2">تأجيــر مركبـــات نقــــل</h2>
-                <p class="text-2xl text-red-600 font-bold">(شاملة السائق والمركبة البديلة)</p>
+            <div class="mb-4">
+                <h2 class="text-5xl md:text-6xl font-black text-white leading-tight mb-2">تأجيـر مركبات نقل</h2>
+                <p class="text-xl text-red-600 font-bold">(شاملة السائق والمركبة البديلة)</p>
             </div>
 
             <!-- Red accent line -->
-            <div class="w-24 h-1 bg-red-600 mb-8"></div>
+            <div class="w-20 h-1 bg-red-600 mb-6"></div>
 
-            <!-- Main Vehicle - Dina 4.5 Ton -->
-            <div class="mb-10">
-                <div class="inline-block bg-red-600/20 border-2 border-red-600 rounded-2xl px-8 py-4">
-                    <span class="text-4xl md:text-5xl font-black text-white">دينـــــــا</span>
-                    <span class="text-3xl md:text-4xl font-black text-red-600 mr-4">4.5 طــن</span>
+{{--            <!-- Dina 4.5 Ton - Prominent Display -->--}}
+{{--            <div class="mb-6">--}}
+{{--                <div class="inline-block bg-red-600/20 border-2 border-red-600 rounded-xl px-6 py-3">--}}
+{{--                    <span class="text-3xl md:text-4xl font-black text-white">دينـا</span>--}}
+{{--                    <span class="text-2xl md:text-3xl font-black text-red-600 mr-3">4.5 طن</span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+            <!-- 4 Vehicles Grid - As shown in images -->
+            <!-- 4 Vehicles Grid - Each vehicle with its coldness statuses -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <!-- Column 1: دوکر بضائع -->
+                <div class="flex flex-col items-center">
+                    <!-- Vehicle styled like the Dina example -->
+                    <div class="inline-block bg-red-600/20 border-2 border-red-600 rounded-xl px-4 py-2 mb-3">
+                        <span class="text-xl md:text-2xl font-black text-white">دوکر بضائع</span>
+                    </div>
+
+                    <!-- Coldness statuses -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <!-- مبرد -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-red-600/30 rounded-lg px-3 py-1.5">
+                            <img src="{{ asset('assets/img/sec6.3-cold-icon.png') }}" alt="مبرد" class="w-4 h-4">
+                            <span class="text-white text-xs font-bold">مبرد</span>
+                        </div>
+                        <!-- غير مبرد -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-red-600/30 rounded-lg px-3 py-1.5">
+                            <img src="{{ asset('assets/img/sec6.2-not-cold-icon.png') }}" alt="غير مبرد" class="w-4 h-4">
+                            <span class="text-white text-xs font-bold">غير مبرد</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: فان بضائع -->
+                <div class="flex flex-col items-center">
+                    <!-- Vehicle styled like the Dina example -->
+                    <div class="inline-block bg-red-600/20 border-2 border-red-600 rounded-xl px-4 py-2 mb-3">
+                        <span class="text-xl md:text-2xl font-black text-white">فان بضائع</span>
+                    </div>
+
+                    <!-- Coldness statuses -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <!-- مبرد -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-red-600/30 rounded-lg px-3 py-1.5">
+                            <img src="{{ asset('assets/img/sec6.3-cold-icon.png') }}" alt="مبرد" class="w-4 h-4">
+                            <span class="text-white text-xs font-bold">مبرد</span>
+                        </div>
+                        <!-- غير مبرد -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-red-600/30 rounded-lg px-3 py-1.5">
+                            <img src="{{ asset('assets/img/sec6.2-not-cold-icon.png') }}" alt="غير مبرد" class="w-4 h-4">
+                            <span class="text-white text-xs font-bold">غير مبرد</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: دينا 4.5 طن -->
+                <div class="flex flex-col items-center">
+                    <!-- Vehicle styled like the Dina example with tonnage -->
+                    <div class="inline-block bg-red-600/20 border-2 border-red-600 rounded-xl px-4 py-2 mb-3">
+                        <span class="text-xl md:text-2xl font-black text-white">دينـا</span>
+                        <span class="text-lg md:text-xl font-black text-red-600 mr-2">4.5 طن</span>
+                    </div>
+
+                    <!-- Coldness statuses -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <!-- مبرد -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-red-600/30 rounded-lg px-3 py-1.5">
+                            <img src="{{ asset('assets/img/sec6.3-cold-icon.png') }}" alt="مبرد" class="w-4 h-4">
+                            <span class="text-white text-xs font-bold">مبرد</span>
+                        </div>
+                        <!-- غير مبرد -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-red-600/30 rounded-lg px-3 py-1.5">
+                            <img src="{{ asset('assets/img/sec6.2-not-cold-icon.png') }}" alt="غير مبرد" class="w-4 h-4">
+                            <span class="text-white text-xs font-bold">غير مبرد</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4: سـيدان -->
+                <div class="flex flex-col items-center">
+                    <!-- Vehicle styled like the Dina example -->
+                    <div class="inline-block bg-red-600/20 border-2 border-red-600 rounded-xl px-4 py-2 mb-3">
+                        <span class="text-xl md:text-2xl font-black text-white">سـيدان</span>
+                    </div>
+
+                    <!-- Coldness statuses - only مبرد available for sedan -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <!-- مبرد -->
+                        <div class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-red-600/30 rounded-lg px-3 py-1.5">
+                            <img src="{{ asset('assets/img/sec6.3-cold-icon.png') }}" alt="مبرد" class="w-4 h-4">
+                            <span class="text-white text-xs font-bold">مبرد</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Vehicle Types Grid - 3 columns as in screenshot -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
-                <!-- Row 1 -->
-                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
-                    <span class="text-xl font-bold text-white">فيبر</span>
-                </div>
-                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
-                    <span class="text-xl font-bold text-white">ميـرو</span>
-                </div>
-                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
-                    <span class="text-xl font-bold text-white">سيـــدان</span>
+            <!-- Features Cards with Icons - 5 features as in image -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-6">
+                <!-- 10 ساعات عمل -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 text-center">
+                    <img src="{{ asset('assets/img/sec6.4-10work-hours.png') }}" alt="10 Hours" class="w-8 h-8 mx-auto mb-2">
+                    <span class="text-white text-xs font-bold block">١٠ ساعات عمل</span>
                 </div>
 
-                <!-- Row 2 -->
-                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
-                    <span class="text-xl font-bold text-white">ميـرو</span>
+                <!-- هاتف ذكي -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 text-center">
+                    <img src="{{ asset('assets/img/sec6.5-phone.png') }}" alt="Phone" class="w-8 h-8 mx-auto mb-2">
+                    <span class="text-white text-xs font-bold block">هاتف ذكي</span>
                 </div>
-                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
-                    <span class="text-xl font-bold text-white">دوكـــر بضائــع</span>
+
+                <!-- جهاز تتبع -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 text-center">
+                    <img src="{{ asset('assets/img/sec6.6-GPS.png') }}" alt="GPS" class="w-8 h-8 mx-auto mb-2">
+                    <span class="text-white text-xs font-bold block">جهاز تتبع</span>
                 </div>
-                <div class="bg-black/40 backdrop-blur-sm border border-red-600/20 rounded-xl p-4 text-center">
-                    <span class="text-xl font-bold text-white">ميـرو</span>
+
+                <!-- صيانة شاملة -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 text-center">
+                    <img src="{{ asset('assets/img/sec6.7-maintenance.png') }}" alt="Maintenance" class="w-8 h-8 mx-auto mb-2">
+                    <span class="text-white text-xs font-bold block">صيانة شاملة</span>
+                </div>
+
+                <!-- عداد مفتوح -->
+                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-3 text-center">
+                    <img src="{{ asset('assets/img/sec6.8-open-counter.png') }}" alt="Open Counter" class="w-8 h-8 mx-auto mb-2">
+                    <span class="text-white text-xs font-bold block">عداد مفتوح</span>
                 </div>
             </div>
 
-            <!-- Features Grid - Bottom section -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
-                    <span class="text-red-500 font-bold text-lg">✓</span>
-                    <span class="text-white-200">عداد مفتوح</span>
-                </div>
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
-                    <span class="text-red-500 font-bold text-lg">✓</span>
-                    <span class="text-white-200">جهاز تتبع</span>
-                </div>
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
-                    <span class="text-red-500 font-bold text-lg">✓</span>
-                    <span class="text-white-200">هاتف ذكي</span>
-                </div>
-                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-red-600/20 rounded-xl p-3">
-                    <span class="text-red-500 font-bold text-lg">✓</span>
-                    <span class="text-white-200">ساعات عمل</span>
-                </div>
-            </div>
 
             <!-- Bottom red accent line -->
-            <div class="w-24 h-1 bg-red-600 mt-12"></div>
+            <div class="w-16 h-1 bg-red-600 mt-4 mx-auto"></div>
         </div>
     </div>
-
-    <!-- Scroll Indicator -->
-{{--    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">--}}
-{{--        <div class="flex flex-col items-center gap-2">--}}
-{{--            <span class="text-white-400 text-sm">اكتشف المزيد</span>--}}
-{{--            <div class="w-6 h-10 border-2 border-white-400 rounded-full flex justify-center">--}}
-{{--                <div class="w-1 h-2 bg-red-500 rounded-full mt-2 animate-bounce"></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 </section>
-
 <!-- ===== SECTION 7 - LABOR RENTAL ===== -->
 <section id="section7" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section7.png') }}');">
     <!-- Logo in top right corner -->
@@ -785,17 +852,17 @@
 
                                 <!-- Items List -->
                                 <ul class="space-y-2">
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
                                         <span>١٠ ساعات عمل</span>
-                                        <span class="text-red-500 text-sm">🔻</span>
+                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔻</span>
                                     </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
                                         <span>نطاق معفي</span>
-                                        <span class="text-red-500 text-sm">🔻</span>
+                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔻</span>
                                     </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
                                         <span>تأمين طبي</span>
-                                        <span class="text-red-500 text-sm">🔻</span>
+                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔻</span>
                                     </li>
                                 </ul>
                             </div>
@@ -815,17 +882,17 @@
 
                                 <!-- Items List -->
                                 <ul class="space-y-2">
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
                                         <span>هاتف ذكي</span>
-                                        <span class="text-red-500 text-sm">🔺</span>
+                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔺</span>
                                     </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
                                         <span>اشعار اجير</span>
-                                        <span class="text-red-500 text-sm">🔺</span>
+                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔺</span>
                                     </li>
-                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-center gap-2">
+                                    <li class="text-base md:text-lg text-gray-200 flex items-center justify-end gap-3">
                                         <span>ملابس موحدة</span>
-                                        <span class="text-red-500 text-sm">🔺</span>
+                                        <span class="text-red-500 text-sm min-w-[20px] text-left">🔺</span>
                                     </li>
                                 </ul>
                             </div>
@@ -873,10 +940,10 @@
                     <div class="text-xs text-red-500 mt-1">Nitqat</div>
                 </div>
 
-                <!-- Card 2: أسعار عمل / 10 ساعات -->
+                <!-- Card 2: ساعات  عمل / 10 ساعات -->
                 <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl p-4 text-center">
                     <img src="{{ asset('assets/img/sec8.4-10work-hours.png') }}" alt="10 Hours" class="w-12 h-12 mx-auto mb-2">
-                    <div class="text-lg font-bold text-white">أسعار عمل</div>
+                    <div class="text-lg font-bold text-white">ساعات  عمل</div>
                     <div class="text-sm text-gray-400">١٠ ساعات</div>
                 </div>
 
@@ -959,7 +1026,7 @@
             <!-- Three Cards in One Line - with icons -->
             <div class="grid grid-cols-2 gap-3 max-w-3xl">
                 <!-- Card 1: نقل ثقيل (Heavy Transport) -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-3 px-2 flex flex-col items-center text-center">
+                <div class="bg-black/20 border border-red-600/30 rounded-xl py-3 px-2 flex flex-col items-center text-center">
                     <img src="{{ asset('assets/img/sec9.2-heavy-transport.png') }}" alt="Heavy Transport" class="w-10 h-10 mb-1">
                     <div class="text-red-600 font-black text-sm">نقل</div>
                     <div class="text-white font-black text-base">ثقيل</div>
@@ -967,7 +1034,7 @@
                 </div>
 
                 <!-- Card 2: نقل متوسط (Medium Transport) -->
-                <div class="bg-black/40 backdrop-blur-lg border border-red-600/30 rounded-xl py-3 px-2 flex flex-col items-center text-center">
+                <div class="bg-black/20 border border-red-600/30 rounded-xl py-3 px-2 flex flex-col items-center text-center">
                     <img src="{{ asset('assets/img/sec9.2-medium-transport.png') }}" alt="Medium Transport" class="w-10 h-10 mb-1">
                     <div class="text-red-600 font-black text-sm">نقل</div>
                     <div class="text-white font-black text-base">متوسط</div>
@@ -1031,7 +1098,9 @@
             <div class="w-16 h-1 bg-red-600 mt-4 mx-auto"></div>
         </div>
     </div>
-</section><section id="section10" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section10.png') }}');">
+</section>
+
+<section id="section10" class="section-wrapper" style="background-image: url('{{ asset('assets/img/sections/section10.png') }}');">
     <!-- Logo in top right corner -->
     <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="section-logo">
 
@@ -1387,8 +1456,7 @@
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center font-black text-2xl">ن</div>
                     <div>
-                        <div class="text-2xl font-black">{{ $settings['company_name_ar'] ?? 'ناشط' }}</div>
-                        <div class="text-sm text-white-500">مجموعة ناشط الاستثمارية</div>
+                        <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="header-logo">
                     </div>
                 </div>
                 <p class="text-white-400 leading-relaxed max-w-md">
