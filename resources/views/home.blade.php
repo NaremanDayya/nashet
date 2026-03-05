@@ -176,6 +176,12 @@
             z-index: 20;
             max-width: 150px;
         }
+        .header-logo {
+            position: absolute;
+            top: 2rem;
+            z-index: 20;
+            max-width: 150px;
+        }
 
         @media (max-width: 768px) {
             .section-logo {
@@ -205,13 +211,7 @@
         <div class="flex items-center justify-between">
             <!-- Logo -->
             <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center font-black text-2xl transform group-hover:scale-110 transition">
-                    ن
-                </div>
-                <div>
-                    <div class="text-xl font-black leading-none">{{ $settings['company_name_ar'] ?? 'ناشط' }}</div>
-                    <div class="text-xs text-white-400 leading-none mt-1">مجموعة استثمارية رائدة</div>
-                </div>
+                <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="header-logo">
             </a>
 
             <!-- Desktop Menu -->
