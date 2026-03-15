@@ -1505,46 +1505,19 @@
     <div class="section-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.85) 0%, rgba(0,0,0,0.7) 100%);"></div>
 
     <div class="section-content">
-        <div class="max-w-5xl mx-auto text-center" data-aos="zoom-in">
+        <div class="max-w-5xl mx-auto text-left" data-aos="zoom-in">
+            <!-- Arabic Messages - aligned to left corner -->
+            <div class="mb-4">
+                <p class="text-4xl md:text-5xl text-white leading-relaxed mb-4 font-bold">
+                    لأننا لا نؤمن فقط بتحقيق النجاح، بل<br>
+                    بتحقيق النجاح الذي يدوم ويصنع الفارق
+                </p>
 
-            <!-- First Message - NASHEt Brand Line -->
-            <div class="mb-8">
-                <span class="text-5xl md:text-7xl font-black text-white tracking-wider">NASHEt</span>
-                <p class="text-xl md:text-2xl text-white/90 mt-2">We Drive Your Strong Sales</p>
+                <p class="text-4xl md:text-5xl text-white leading-relaxed">
+                    نحن نزيد مبيعاتك، نقلل خسائرك، ونبرز<br>
+                    علامتك التجارية
+                </p>
             </div>
-
-            <!-- Arabic Message 1 - as paragraph -->
-            <p class="text-2xl md:text-3xl text-white leading-relaxed mb-6">
-                لأننا لا نؤمن فقط بتحقيق النجاح، بل<br>
-                بتحقيق النجاح الذي يدوم ويصنع الفارق
-            </p>
-
-            <!-- Arabic Message 2 - as paragraph with proper styling -->
-            <p class="text-3xl md:text-4xl font-bold mb-8 leading-relaxed">
-                <span class="text-white">نحن نزيد مبيعاتك، نقلل خسائرك، ونبرز</span><br>
-                <span class="text-white text-4xl md:text-5xl font-black bg-red-600/30 px-6 py-2 inline-block mt-2">علامتك التجارية</span>
-            </p>
-
-            <!-- Call to Action Buttons -->
-            <div class="flex flex-wrap justify-center gap-6 mb-12">
-                <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
-                   class="inline-flex items-center gap-3 bg-white text-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition shadow-2xl hover:scale-105">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                    {{ $settings['company_phone'] ?? '٠٥٠٠٩٢٨٦٨٦' }}
-                </a>
-                <a href="#contact"
-                   class="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 rounded-2xl text-2xl font-black hover:bg-white hover:text-red-600 transition">
-                    تواصل معنا
-                </a>
-            </div>
-
-            <!-- Bottom red accent line -->
-            <div class="w-24 h-1 bg-red-600 mx-auto mt-8"></div>
-
-            <!-- Tagline -->
-            <p class="text-white/80 text-lg mt-6">ناشط - شراكة تبدأ بالنجاح</p>
         </div>
     </div>
 
@@ -1556,70 +1529,69 @@
             </svg>
         </a>
     </div>
-</section><!-- ===== FOOTER / CONTACT ===== -->
-<section id="contact" class="py-20 bg-black">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-4 gap-12 mb-12">
-            <!-- Brand -->
-            <div class="md:col-span-2">
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="max-w-[150px] h-auto">
-                </div>
-                <p class="text-white-400 leading-relaxed max-w-md">
-                    شراكة رائدة في تطوير الأعمال بالمملكة العربية السعودية والشرق الأوسط،
-                    نقدم حلولاً متكاملة لتطوير أعمالكم وزيادة مبيعاتكم.
-                </p>
-            </div>
+</section>{{--<section id="contact" class="py-20 bg-black">--}}
+{{--    <div class="max-w-7xl mx-auto px-6">--}}
+{{--        <div class="grid md:grid-cols-4 gap-12 mb-12">--}}
+{{--            <!-- Brand -->--}}
+{{--            <div class="md:col-span-2">--}}
+{{--                <div class="flex items-center gap-3 mb-6">--}}
+{{--                    <img src="{{ asset('assets/img/logo.png') }}" alt="{{ $settings['company_name_ar'] ?? 'ناشط' }}" class="max-w-[150px] h-auto">--}}
+{{--                </div>--}}
+{{--                <p class="text-white-400 leading-relaxed max-w-md">--}}
+{{--                    شراكة رائدة في تطوير الأعمال بالمملكة العربية السعودية والشرق الأوسط،--}}
+{{--                    نقدم حلولاً متكاملة لتطوير أعمالكم وزيادة مبيعاتكم.--}}
+{{--                </p>--}}
+{{--            </div>--}}
 
-            <!-- Quick Links -->
-            <div>
-                <h4 class="font-bold text-white text-lg mb-6">روابط سريعة</h4>
-                <ul class="space-y-3">
-                    <li><a href="#home" class="text-white-400 hover:text-red-500 transition">الرئيسية</a></li>
-                    <li><a href="#section2" class="text-white-400 hover:text-red-500 transition">من نحن</a></li>
-                    <li><a href="#section3" class="text-white-400 hover:text-red-500 transition">خدماتنا</a></li>
-                    <li><a href="#section11" class="text-white-400 hover:text-red-500 transition">لماذا نحن</a></li>
-                </ul>
-            </div>
+{{--            <!-- Quick Links -->--}}
+{{--            <div>--}}
+{{--                <h4 class="font-bold text-white text-lg mb-6">روابط سريعة</h4>--}}
+{{--                <ul class="space-y-3">--}}
+{{--                    <li><a href="#home" class="text-white-400 hover:text-red-500 transition">الرئيسية</a></li>--}}
+{{--                    <li><a href="#section2" class="text-white-400 hover:text-red-500 transition">من نحن</a></li>--}}
+{{--                    <li><a href="#section3" class="text-white-400 hover:text-red-500 transition">خدماتنا</a></li>--}}
+{{--                    <li><a href="#section11" class="text-white-400 hover:text-red-500 transition">لماذا نحن</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
 
-            <!-- Contact Info -->
-            <div>
-                <h4 class="font-bold text-white text-lg mb-6">تواصل معنا</h4>
-                <div class="space-y-4">
-                    <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"
-                       class="flex items-center gap-3 text-white-400 hover:text-red-500 transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                        </svg>
-                        {{ $settings['company_phone'] ?? '٠٥٠٠٩٢٨٦٨٦' }}
-                    </a>
-                    <p class="flex items-center gap-3 text-white-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                        المملكة العربية السعودية
-                    </p>
-                    <p class="text-white-500 text-sm">
-                        تأسست عام {{ $settings['company_founded_year'] ?? '١٩٩٠' }}
-                    </p>
-                </div>
-            </div>
-        </div>
+{{--            <!-- Contact Info -->--}}
+{{--            <div>--}}
+{{--                <h4 class="font-bold text-white text-lg mb-6">تواصل معنا</h4>--}}
+{{--                <div class="space-y-4">--}}
+{{--                    <a href="tel:{{ $settings['company_phone'] ?? '0500928686' }}"--}}
+{{--                       class="flex items-center gap-3 text-white-400 hover:text-red-500 transition">--}}
+{{--                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>--}}
+{{--                        </svg>--}}
+{{--                        {{ $settings['company_phone'] ?? '٠٥٠٠٩٢٨٦٨٦' }}--}}
+{{--                    </a>--}}
+{{--                    <p class="flex items-center gap-3 text-white-400">--}}
+{{--                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>--}}
+{{--                        </svg>--}}
+{{--                        المملكة العربية السعودية--}}
+{{--                    </p>--}}
+{{--                    <p class="text-white-500 text-sm">--}}
+{{--                        تأسست عام {{ $settings['company_founded_year'] ?? '١٩٩٠' }}--}}
+{{--                    </p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-        <!-- Copyright -->
-        <div class="border-t border-white-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-white-600 text-sm">
-                &copy; {{ date('Y') }} {{ $settings['company_name_ar'] ?? 'ناشط' }}. جميع الحقوق محفوظة.
-            </p>
-            @auth
-                <a href="{{ route('admin.dashboard') }}" class="text-white-600 hover:text-red-500 transition text-sm">لوحة التحكم</a>
-            @else
-                <a href="{{ route('login') }}" class="text-white-600 hover:text-red-500 transition text-sm">تسجيل دخول المشرف</a>
-            @endauth
-        </div>
-    </div>
-    </footer>
+{{--        <!-- Copyright -->--}}
+{{--        <div class="border-t border-white-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">--}}
+{{--            <p class="text-white-600 text-sm">--}}
+{{--                &copy; {{ date('Y') }} {{ $settings['company_name_ar'] ?? 'ناشط' }}. جميع الحقوق محفوظة.--}}
+{{--            </p>--}}
+{{--            @auth--}}
+{{--                <a href="{{ route('admin.dashboard') }}" class="text-white-600 hover:text-red-500 transition text-sm">لوحة التحكم</a>--}}
+{{--            @else--}}
+{{--                <a href="{{ route('login') }}" class="text-white-600 hover:text-red-500 transition text-sm">تسجيل دخول المشرف</a>--}}
+{{--            @endauth--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    </footer>--}}
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
