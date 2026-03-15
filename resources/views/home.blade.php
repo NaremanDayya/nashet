@@ -1504,20 +1504,32 @@
 
     <div class="section-overlay" style="background: linear-gradient(135deg, rgba(220,38,38,0.85) 0%, rgba(0,0,0,0.7) 100%);"></div>
 
-    <div class="section-content">
-        <div class="max-w-5xl mx-auto text-left" data-aos="zoom-in">
-            <!-- Arabic Messages - aligned to left corner -->
-            <div class="mb-4">
-                <p class="text-4xl md:text-5xl text-white leading-relaxed mb-4 font-bold">
-                    لأننا لا نؤمن فقط بتحقيق النجاح، بل<br>
-                    بتحقيق النجاح الذي يدوم ويصنع الفارق
-                </p>
+    <div class="section-content h-full">
+        <!-- Grid divided into 4 sections -->
+        <div class="grid grid-cols-2 grid-rows-2 h-full w-full">
+            <!-- Top Left Section (empty) -->
+            <div class="p-8"></div>
 
-                <p class="text-4xl md:text-5xl text-white leading-relaxed">
-                    نحن نزيد مبيعاتك، نقلل خسائرك، ونبرز<br>
-                    علامتك التجارية
-                </p>
+            <!-- Top Right Section (empty) -->
+            <div class="p-8"></div>
+
+            <!-- Bottom Left Section - with Arabic text -->
+            <div class="p-8 flex items-end justify-start" data-aos="fade-up">
+                <div class="text-white">
+                    <p class="text-4xl md:text-5xl leading-relaxed font-bold mb-4">
+                        لأننا لا نؤمن فقط بتحقيق النجاح، بل<br>
+                        بتحقيق النجاح الذي يدوم ويصنع الفارق
+                    </p>
+
+                    <p class="text-4xl md:text-5xl leading-relaxed font-bold">
+                        نحن نزيد مبيعاتك، نقلل خسائرك، ونبرز<br>
+                        علامتك التجارية
+                    </p>
+                </div>
             </div>
+
+            <!-- Bottom Right Section (empty) -->
+            <div class="p-8"></div>
         </div>
     </div>
 
@@ -1529,8 +1541,7 @@
             </svg>
         </a>
     </div>
-</section>{{--<section id="contact" class="py-20 bg-black">--}}
-{{--    <div class="max-w-7xl mx-auto px-6">--}}
+</section>{{--    <div class="max-w-7xl mx-auto px-6">--}}
 {{--        <div class="grid md:grid-cols-4 gap-12 mb-12">--}}
 {{--            <!-- Brand -->--}}
 {{--            <div class="md:col-span-2">--}}
