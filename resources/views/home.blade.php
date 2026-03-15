@@ -1515,6 +1515,11 @@
 
             <!-- Bottom Left Section - with Arabic text -->
             <div class="p-8 flex items-start justify-nd" data-aos="fade-up">
+
+            </div>
+
+            <!-- Bottom Right Section (empty) -->
+            <div class="p-8">
                 <div class="text-white">
                     <p class="text-4xl md:text-5xl leading-relaxed font-bold mb-4">
                         لأننا لا نؤمن فقط بتحقيق النجاح، بل<br>
@@ -1527,9 +1532,6 @@
                     </p>
                 </div>
             </div>
-
-            <!-- Bottom Right Section (empty) -->
-            <div class="p-8"></div>
         </div>
     </div>
 
