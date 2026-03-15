@@ -1514,14 +1514,14 @@
             <div class="p-8"></div>
 
             <!-- Bottom Left Section - with Arabic text -->
-            <div class="p-8 flex items-end justify-start" data-aos="fade-up">
+            <div class="p-8 flex items-start justify-nd" data-aos="fade-up">
                 <div class="text-white">
                     <p class="text-4xl md:text-5xl leading-relaxed font-bold mb-4">
                         لأننا لا نؤمن فقط بتحقيق النجاح، بل<br>
                         بتحقيق النجاح الذي يدوم ويصنع الفارق
                     </p>
 
-                    <p class="text-4xl md:text-5xl leading-relaxed font-bold">
+                    <p class="text-4xl md:text-5xl leading-relaxed font-semibold">
                         نحن نزيد مبيعاتك، نقلل خسائرك، ونبرز<br>
                         علامتك التجارية
                     </p>
